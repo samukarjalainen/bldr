@@ -40,6 +40,10 @@
 }
 
 .navbar{
+  padding: 30px 0;
+  margin-bottom: 40px;
+  border-bottom: 1px solid $light-gray;
+  border-radius: 0;
   .navbar-header {
 
     img.site-logo {

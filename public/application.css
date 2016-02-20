@@ -5888,12 +5888,16 @@ html, body {
     height: 3px;
     background: #ff6600; }
 
-.navbar .navbar-header img.site-logo {
-  height: 33px;
-  margin: 10px; }
-
-.navbar .navbar-header #navbar ul.nav.navbar-nav {
-  background-color: red; }
+.navbar {
+  padding: 30px 0;
+  margin-bottom: 40px;
+  border-bottom: 1px solid #777;
+  border-radius: 0; }
+  .navbar .navbar-header img.site-logo {
+    height: 33px;
+    margin: 10px; }
+  .navbar .navbar-header #navbar ul.nav.navbar-nav {
+    background-color: red; }
 
 /* Specify colors */
 /* Specify fonts */
