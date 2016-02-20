@@ -10,6 +10,7 @@
 @import url(https://fonts.googleapis.com/css?family=Ubuntu:400,400italic);
 @import url(https://fonts.googleapis.com/css?family=Ubuntu:400,400italic);
 @import url(https://fonts.googleapis.com/css?family=Ubuntu:400,400italic);
+@import url(https://fonts.googleapis.com/css?family=Ubuntu:400,400italic);
 html {
   font-family: sans-serif;
   -ms-text-size-adjust: 100%;
@@ -5891,9 +5892,6 @@ html, body {
   height: 33px;
   margin: 10px; }
 
-.navbar .navbar-header .navbar-brand:hover {
-  color: #ff6600; }
-
 .navbar .navbar-header #navbar ul.nav.navbar-nav {
   background-color: red; }
 
@@ -5916,5 +5914,44 @@ html, body {
   background-color: #eee; }
 
 /* Styles for index.jade */
-.testdiv {
-  background-color: #333; }
+/* Specify colors */
+/* Specify fonts */
+html, body {
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 16px; }
+
+.navbar .navbar-header .navbar-brand {
+  font-size: 32px;
+  color: #333; }
+
+.navbar-default .navbar-nav {
+  font-size: 18px;
+  color: #555; }
+
+.welcome {
+  text-align: center; }
+
+.punchline-wrapper {
+  background-color: #f2f2f2;
+  margin: 30px 0; }
+  .punchline-wrapper .punchline-item {
+    text-align: center; }
+    .punchline-wrapper .punchline-item .pl-image {
+      height: 180px;
+      margin: 30px auto; }
+    .punchline-wrapper .punchline-item .pl-underline:after {
+      content: '';
+      display: block;
+      margin: 50px auto 30px;
+      width: 60px;
+      height: 5px;
+      background: #ff6600; }
+    .punchline-wrapper .punchline-item .pl-bottom-wrapper {
+      margin-bottom: 30px; }
+      .punchline-wrapper .punchline-item .pl-bottom-wrapper .pl-number {
+        display: inline-block;
+        font-size: 32px;
+        margin-right: 15px; }
+      .punchline-wrapper .punchline-item .pl-bottom-wrapper .pl-text {
+        display: inline-block;
+        font-size: 26px; }

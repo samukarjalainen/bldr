@@ -48,10 +48,6 @@
     }
     .navbar-brand {
       @extend %navbar-brand-font;
-
-      &:hover {
-        color: $accent-color;
-      }
     }
 
     #navbar {

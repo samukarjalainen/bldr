@@ -2,7 +2,26 @@ extends layout
 
 
 block content
-  h1= title
-  p Welcome to #{title}
-  div.testdiv This is a test
-  .jumbotron YEAH
+  h3.welcome New to Bldr? It's super easy to use - check it out yourself!
+
+  .punchline-wrapper.row
+    .punchline-item.col-xs-12.col-lg-4
+      img(src="../images/question-mark.svg").pl-image.img-responsive
+      .pl-underline
+      .pl-bottom-wrapper
+        .pl-number 1.
+        .pl-text Think about your goals
+    .punchline-item.col-xs-12.col-lg-4
+      img(src="../images/clipboard.svg").pl-image.img-responsive
+      .pl-underline
+      .pl-bottom-wrapper
+        .pl-number 2.
+        .pl-text Make a program
+    .punchline-item.col-xs-12.col-lg-4
+      img(src="../images/dumbbell-simple.svg").pl-image.img-responsive
+      .pl-underline
+      .pl-bottom-wrapper
+        .pl-number 3.
+        .pl-text Exercise!
+
+

@@ -1,5 +1,46 @@
 /* Styles for index.jade */
+@import "variables";
 
-.testdiv {
-  background-color: $main-color;
+.welcome {
+  text-align: center;
+}
+
+.punchline-wrapper {
+  background-color: $bg-light;
+  margin: 30px 0;
+
+  .punchline-item {
+    text-align: center;
+
+    .pl-image {
+      height: 180px;
+      margin: 30px auto;
+    }
+
+    .pl-underline {
+      &:after {
+        content: '';
+        display: block;
+        margin: 50px auto 30px;
+        width: 60px;
+        height: 5px;
+        background: $accent-color;
+      }
+
+    }
+
+    .pl-bottom-wrapper {
+      margin-bottom: 30px;
+      .pl-number {
+        display: inline-block;
+        font-size: 32px;
+        margin-right: 15px;
+      }
+
+      .pl-text {
+        display: inline-block;
+        font-size: 26px;
+      }
+    }
+  }
 }
