@@ -29,7 +29,11 @@ html(lang='en')
               li: a( href="/about" ) About
               li: a( href="/contact" ) Contact
 
-    block content
+    .container
+      block content
+
+    .container
+      include footer
 
   script(src='bower_components/jquery/dist/jquery.js')
   script(src='bower_components/bootstrap-sass/assets/javascripts/bootstrap.js')

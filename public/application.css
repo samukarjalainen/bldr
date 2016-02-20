@@ -9,6 +9,7 @@
 @import url(https://fonts.googleapis.com/css?family=Ubuntu:400,400italic);
 @import url(https://fonts.googleapis.com/css?family=Ubuntu:400,400italic);
 @import url(https://fonts.googleapis.com/css?family=Ubuntu:400,400italic);
+@import url(https://fonts.googleapis.com/css?family=Ubuntu:400,400italic);
 html {
   font-family: sans-serif;
   -ms-text-size-adjust: 100%;
@@ -5895,6 +5896,24 @@ html, body {
 
 .navbar .navbar-header #navbar ul.nav.navbar-nav {
   background-color: red; }
+
+/* Specify colors */
+/* Specify fonts */
+html, body {
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 16px; }
+
+.navbar .navbar-header .navbar-brand {
+  font-size: 32px;
+  color: #333; }
+
+.navbar-default .navbar-nav {
+  font-size: 18px;
+  color: #555; }
+
+#footer {
+  padding: 20px;
+  background-color: #eee; }
 
 /* Styles for index.jade */
 .testdiv {
