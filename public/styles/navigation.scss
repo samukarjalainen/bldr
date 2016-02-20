@@ -1,0 +1,9 @@
+@import "variables";
+
+nav {
+  .navbar-header {
+    .navbar-brand {
+      @extend %navbar-brand-font;
+    }
+  }
+}

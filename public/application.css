@@ -8,6 +8,7 @@
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
 @import url(https://fonts.googleapis.com/css?family=Ubuntu:400,400italic);
 @import url(https://fonts.googleapis.com/css?family=Ubuntu:400,400italic);
+@import url(https://fonts.googleapis.com/css?family=Ubuntu:400,400italic);
 html {
   font-family: sans-serif;
   -ms-text-size-adjust: 100%;
@@ -5826,13 +5827,35 @@ html, body {
   font-family: 'Ubuntu', sans-serif;
   font-size: 20px; }
 
+nav .navbar-header .navbar-brand {
+  font-size: 32px;
+  color: #000; }
+
 /* Specify colors */
 /* Specify fonts */
 html, body {
   font-family: 'Ubuntu', sans-serif;
   font-size: 20px; }
 
+nav .navbar-header .navbar-brand {
+  font-size: 32px;
+  color: #000; }
+
+/* Specify colors */
+html, body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+
+/* Specify fonts */
+html, body {
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 20px; }
+
+nav .navbar-header .navbar-brand {
+  font-size: 32px;
+  color: #000; }
+
 /* Specify colors */
 /* Styles for index.jade */
 .testdiv {
-  background-color: #CCC; }
+  background-color: black; }
