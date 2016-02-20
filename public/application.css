@@ -5886,6 +5886,10 @@ html, body {
     height: 3px;
     background: #ff6600; }
 
+.navbar .navbar-header img.site-logo {
+  height: 33px;
+  margin: 10px; }
+
 .navbar .navbar-header .navbar-brand:hover {
   color: #ff6600; }
 
