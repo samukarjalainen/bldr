@@ -4,15 +4,15 @@ var router = express.Router();
 /* GET home page. */
 
 router.get('/', function(req, res) {
-  res.render('index', { title: 'Builderi' });
+  res.render('index', { title: 'Bldr | home' });
 });
 
 router.get('/about', function (req, res) {
-  res.render('about');
+  res.render('about', { title: 'Bldr | about' });
 });
 
 router.get('/contact', function (req, res) {
-  res.render('contact');
+  res.render('contact', { title: 'Bldr | contact' });
 });
 
 module.exports = router;
