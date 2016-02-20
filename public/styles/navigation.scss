@@ -1,9 +1,58 @@
 @import "variables";
 
-nav {
+.navbar-default {
+  background-color: transparent;
+  border: none;
+
+  .navbar-nav {
+    @extend %navbar-nav-font;
+    & > {
+
+      li {
+        a {
+          &:hover {
+            color: $accent-color;
+          }
+        }
+      }
+
+      li.active {
+        a {
+          background-color: transparent;
+
+          &:hover {
+            color: $accent-color;
+            background-color: transparent;
+          }
+        }
+
+        &:after {
+          content: '';
+          display: block;
+          margin: 0 auto;
+          width: 40px;
+          height: 3px;
+          background: $accent-color;
+        }
+      }
+    }
+  }
+}
+
+.navbar{
   .navbar-header {
     .navbar-brand {
       @extend %navbar-brand-font;
+
+      &:hover {
+        color: $accent-color;
+      }
+    }
+
+    #navbar {
+      ul.nav.navbar-nav {
+        background-color: red;
+      }
     }
   }
 }

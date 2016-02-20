@@ -1,16 +1,23 @@
 @import url(https://fonts.googleapis.com/css?family=Ubuntu:400,400italic);
 
+/* Specify colors */
+$main-color: #333;
+$accent-color: #ff6600;
+$navbar-color: #555;
+$navbar-active-color: #333;
+
 /* Specify fonts */
 %default-font {
   font-family: 'Ubuntu', sans-serif;
-  font-size: 20px;
+  font-size: 16px;
 }
 
 %navbar-brand-font {
   font-size: 32px;
-  color: #000;
+  color: $main-color;
 }
 
-/* Specify colors */
-$main-color: black;
-$navbar-color: #e6e6e6;
+%navbar-nav-font {
+  font-size: 18px;
+  color: $navbar-color;
+}
