@@ -1,1 +1,24 @@
 extends layout
+
+block content
+  .login-wrapper
+
+    if error
+      h4.error= error
+
+
+    form(name="login", class="form-horizontal", method="POST", action="/login", enctype="application/x-www-form-urlencoded")
+
+      .form-group
+        label(for="email", class="control-label col-sm-2 col-lg-offset-3") E-mail:
+        .col-sm-10.col-lg-3
+          input(name="email", type="email", id=email, class="form-control")
+
+      .form-group
+        label(for="password", class="control-label col-sm-2 col-lg-offset-3") Password:
+        .col-sm-10.col-lg-3
+          input(name="password", type="password", id=password, class="form-control")
+
+      .form-group
+        .col-lg-offset-5.col-sm-10.col-lg-1
+          button(type="submit", class="btn btn-default") Login

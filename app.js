@@ -5,6 +5,7 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var sessions = require('client-sessions');
 
 var app = express();
 
@@ -29,6 +30,12 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(sessions({
+  cookieName: 'session',
+  secret: 'shhhsupersecretstuffhere',
+  duration: 60 * 60 * 1000,
+  activeDuration: 5 * 60 * 1000
+}));
 
 
 /* -- Set up environment variables -- */

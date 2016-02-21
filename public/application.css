@@ -15,6 +15,7 @@
 @import url(../bower_components/OwlCarousel/owl-carousel/owl.carousel.css);
 @import url(https://fonts.googleapis.com/css?family=Ubuntu:400,400italic);
 @import url(https://fonts.googleapis.com/css?family=Ubuntu:400,400italic);
+@import url(https://fonts.googleapis.com/css?family=Ubuntu:400,400italic);
 html {
   font-family: sans-serif;
   -ms-text-size-adjust: 100%;
@@ -6167,4 +6168,34 @@ html, body {
     color: #FFF;
     opacity: 0.8; }
     .register-wrapper form.form-horizontal .btn-default:hover {
+      opacity: 1; }
+
+/* Specify colors */
+/* Placeholders */
+html, body {
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 16px; }
+
+.navbar .navbar-header .navbar-brand {
+  font-size: 32px;
+  color: #333; }
+
+.navbar-default .navbar-nav {
+  font-size: 18px;
+  color: #555; }
+
+/* Mixins */
+.login-wrapper .error {
+  text-align: center;
+  margin: 60px auto 60px; }
+
+.login-wrapper form.form-horizontal {
+  margin: 60px auto 120px; }
+  .login-wrapper form.form-horizontal .form-group label {
+    display: inline-block; }
+  .login-wrapper form.form-horizontal .btn-default {
+    background-color: #ff6600;
+    color: #FFF;
+    opacity: 0.8; }
+    .login-wrapper form.form-horizontal .btn-default:hover {
       opacity: 1; }
