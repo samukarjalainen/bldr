@@ -6124,9 +6124,13 @@ html, body {
   color: #555; }
 
 /* Mixins */
+.contact .contact-message {
+  margin: 0 auto 60px;
+  text-align: center; }
+
 .contact form.form-horizontal {
   max-width: 520px;
-  margin: 0 auto; }
+  margin: 30px auto 60px; }
   .contact form.form-horizontal .btn-default {
     background-color: #ff6600;
     color: #FFF;
