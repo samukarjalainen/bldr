@@ -5,7 +5,6 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-var mongoose = require('mongoose');
 
 var app = express();
 
@@ -39,17 +38,6 @@ app.locals.ENV_DEVELOPMENT = env == 'development';
 app.set('port', process.env.PORT || 3000);
 
 
-/* -- Setup database -- */
-mongoose.connect('mongodb://localhost/bldr');
-
-// Load all models in models directory
-fs.readdirSync(__dirname + '/models').forEach(function (filename) {
-  if (~filename.indexOf('.js')) {
-    require(__dirname + '/models/' + filename)
-  }
-});
-
-
 /* -- View engine setup -- */
 app.set('views', path.join(__dirname, 'public/partials'));
 app.set('view engine', 'jade');
@@ -57,7 +45,7 @@ app.locals.pretty = true;
 
 
 /* -- Set up routing -- */
-app.use('/', require('./routes/index'));
+app.use('/', require('./server/routes'));
 
 
 /* -- Catch 404 and forward to error handler -- */
