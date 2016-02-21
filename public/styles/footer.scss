@@ -1,6 +1,8 @@
 @import "variables";
 
 #footer {
-  padding: 20px;
-  background-color: #eee;
+  padding: 40px 20px;
+  //background-color: #eee;
+  height: 150px;
+  border-top: 1px solid $light-gray;
 }
