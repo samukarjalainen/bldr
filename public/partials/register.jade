@@ -4,32 +4,32 @@ block content
   .register-wrapper
     h4.register-headline Fill out the information and you're ready to start using Bldr.
 
-      form(role="form", class="form-horizontal")
+      form(name="signup", class="form-horizontal", method="POST", action="/signup", enctype="application/x-www-form-urlencoded")
 
         .form-group
           label(for="firstname", class="control-label col-sm-2 col-lg-offset-3") First name:
           .col-sm-10.col-lg-3
-            input(type="text", id=firstname, class="form-control")
+            input(name="firstname", type="text", id=firstname, class="form-control")
 
         .form-group
           label(for="lastname", class="control-label col-sm-2 col-lg-offset-3") Last name:
           .col-sm-10.col-lg-3
-            input(type="text", id=lastname, class="form-control")
+            input(name="lastname", type="text", id=lastname, class="form-control")
 
         .form-group
           label(for="email", class="control-label col-sm-2 col-lg-offset-3") E-mail:
           .col-sm-10.col-lg-3
-            input(type="email", id=email, class="form-control")
+            input(name="email", type="email", id=email, class="form-control")
 
         .form-group
           label(for="password", class="control-label col-sm-2 col-lg-offset-3") Password:
           .col-sm-10.col-lg-3
-            input(type="password", id=password, class="form-control")
+            input(name="password", type="password", id=password, class="form-control")
 
         .form-group
-          label(for="pwconfirm", class="control-label col-sm-2 col-lg-offset-3") Password again:
+          label(for="pwconfirm", class="control-label col-sm-2 col-lg-offset-3") Confirm password:
           .col-sm-10.col-lg-3
-            input(type="password", id=pwconfirm, class="form-control")
+            input(name="pwconfirm", type="password", id=pwconfirm, class="form-control")
 
         .form-group
           .col-lg-offset-5.col-sm-10.col-lg-1
