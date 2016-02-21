@@ -18,6 +18,7 @@ app.set('port', process.env.PORT || 3000);
 
 app.set('views', path.join(__dirname, 'public/partials'));
 app.set('view engine', 'jade');
+app.locals.pretty = true;
 
 // app.use(favicon(__dirname + '/public/images/favicon.ico'));
 app.use(logger('dev'));

@@ -2,21 +2,25 @@ extends layout
 
 
 block content
+  // Punchline section
   h3.welcome New to Bldr? It's super easy to use - check it out yourself!
 
   .punchline-wrapper.row
+
     .punchline-item.col-xs-12.col-lg-4
       img(src="../images/question-mark.svg").pl-image.img-responsive
       .pl-underline
       .pl-bottom-wrapper
         .pl-number 1.
         .pl-text Think about your goals
+
     .punchline-item.col-xs-12.col-lg-4
       img(src="../images/clipboard.svg").pl-image.img-responsive
       .pl-underline
       .pl-bottom-wrapper
         .pl-number 2.
         .pl-text Make a program
+          
     .punchline-item.col-xs-12.col-lg-4
       img(src="../images/dumbbell-simple.svg").pl-image.img-responsive
       .pl-underline
@@ -24,4 +28,31 @@ block content
         .pl-number 3.
         .pl-text Exercise!
 
+  // Testimonials section
+  h3.testimonials See what our users say about Bldr
 
+  #clients.owl-carousel
+
+    .client
+      img.client-image(src="../images/ui-face-1.jpg", alt="client")
+      .client-text
+        .client-testimonial Est te dolor iudico platonem, summo periculis an eum, sed cu vivendum adolescens. Corpora accommodare mea te, porro affert nominavi cu eum, quis tamquam ea nam. At omnes interesset ius, ei sit enim ornatus lucilius. Et his convenire tractatos posidonium, qui nostrum scribentur at.
+        .client-name - Jesse Harju
+
+    .client
+      img.client-image(src="../images/ui-face-2.jpg", alt="client")
+      .client-text
+        .client-testimonial Est te dolor iudico platonem, summo periculis an eum, sed cu vivendum adolescens. Corpora accommodare mea te, porro affert nominavi cu eum, quis tamquam ea nam. At omnes interesset ius, ei sit enim ornatus lucilius. Et his convenire tractatos posidonium, qui nostrum scribentur at.
+        .client-name - Eetu Hirsjärvi
+
+    .client
+      img.client-image(src="../images/ui-face-3.jpg", alt="client")
+      .client-text
+        .client-testimonial Ut mel unum reque feugiat. Ne ius forensibus dissentiunt. Ne errem exerci vituperatoribus mea, eam legendos reprimique in, ut falli timeam vix.
+        .client-name - Jutta Anttonen
+
+    .client
+      img.client-image(src="../images/ui-face-4.jpg", alt="client")
+      .client-text
+        .client-testimonial Cum diam vidit apeirian te, vis voluptua tractatos ea, est no ullum veritus volutpat. In pro tantas honestatis.
+        .client-name - Reino Ollikainen
