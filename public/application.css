@@ -6001,7 +6001,7 @@ html, body {
     margin: 0 auto;
     position: relative;
     height: 250px;
-    width: 730px;
+    max-width: 730px;
     background-color: #f2f2f2; }
     #clients .client .client-image {
       position: relative;
@@ -6094,3 +6094,16 @@ html, body {
   filter: Alpha(Opacity=100);
   /*IE7 fix*/
   opacity: 1; }
+
+@media only screen and (max-width: 1200px) {
+  .owl-theme .owl-controls .owl-buttons .owl-prev {
+    left: 0; }
+  .owl-theme .owl-controls .owl-buttons .owl-next {
+    right: 0; } }
+
+@media only screen and (max-width: 768px) {
+  #clients .client .client-image {
+    display: block; }
+  #clients .client .client-text .client-testimonial {
+    display: block;
+    max-width: 370px; } }

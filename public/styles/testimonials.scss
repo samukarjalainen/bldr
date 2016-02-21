@@ -8,7 +8,7 @@
     margin: 0 auto;
     position: relative;
     height: 250px;
-    width: 730px;
+    max-width: 730px;
     background-color: $bg-light;
 
     .client-image  {
@@ -115,4 +115,35 @@
   opacity: 1;
 }
 
+// Fix controls in mobile view
+@media only screen and (max-width : 1200px) {
+  .owl-theme {
+    .owl-controls {
+      .owl-buttons {
+        .owl-prev {
+          left: 0;
+        }
+        .owl-next {
+          right: 0;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width : 768px) {
+  #clients {
+    .client {
+      .client-image {
+        display: block;
+      }
+      .client-text {
+        .client-testimonial {
+          display: block;
+          max-width: 370px;
+        }
+      }
+    }
+  }
+}
 
