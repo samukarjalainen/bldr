@@ -1,0 +1,19 @@
+@import "variables";
+
+.contact {
+
+  form.form-horizontal {
+    max-width: 520px;
+    margin: 0 auto;
+
+    .btn-default {
+      background-color: $accent-color;
+      color: #FFF;
+      opacity: 0.8;
+
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
+}
