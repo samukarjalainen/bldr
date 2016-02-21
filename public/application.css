@@ -14,6 +14,7 @@
 @import url(https://fonts.googleapis.com/css?family=Ubuntu:400,400italic);
 @import url(../bower_components/OwlCarousel/owl-carousel/owl.carousel.css);
 @import url(https://fonts.googleapis.com/css?family=Ubuntu:400,400italic);
+@import url(https://fonts.googleapis.com/css?family=Ubuntu:400,400italic);
 html {
   font-family: sans-serif;
   -ms-text-size-adjust: 100%;
@@ -6136,4 +6137,34 @@ html, body {
     color: #FFF;
     opacity: 0.8; }
     .contact form.form-horizontal .btn-default:hover {
+      opacity: 1; }
+
+/* Specify colors */
+/* Placeholders */
+html, body {
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 16px; }
+
+.navbar .navbar-header .navbar-brand {
+  font-size: 32px;
+  color: #333; }
+
+.navbar-default .navbar-nav {
+  font-size: 18px;
+  color: #555; }
+
+/* Mixins */
+.register-wrapper .register-headline {
+  margin: 0 auto 60px;
+  text-align: center; }
+
+.register-wrapper form.form-horizontal {
+  margin: 30px auto 60px; }
+  .register-wrapper form.form-horizontal .form-group label {
+    display: inline-block; }
+  .register-wrapper form.form-horizontal .btn-default {
+    background-color: #ff6600;
+    color: #FFF;
+    opacity: 0.8; }
+    .register-wrapper form.form-horizontal .btn-default:hover {
       opacity: 1; }
