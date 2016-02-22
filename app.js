@@ -6,6 +6,7 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var sessions = require('client-sessions');
+var User = require('./server/models/user');
 
 var app = express();
 
@@ -36,6 +37,21 @@ app.use(sessions({
   duration: 60 * 60 * 1000,
   activeDuration: 5 * 60 * 1000
 }));
+app.use(function (req, res, next) {
+  if (req.session && req.session.user) {
+    User.findOne({ email: req.session.user.email }, function (err, user) {
+      if (user) {
+        req.user = user;
+        delete req.user.password;
+        req.session.user = req.user;
+        res.locals.user = req.user;
+      }
+      next();
+    });
+  } else {
+    next();
+  }
+});
 
 
 /* -- Set up environment variables -- */

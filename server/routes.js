@@ -1,7 +1,5 @@
 var express = require('express');
 var router = express.Router();
-
-
 var auth = require('./auth.js');
 
 
@@ -23,10 +21,7 @@ router.get('/login', function (req, res) {
 
 router.post('/login', auth.login);
 
-router.get('/logout', function (req, res) {
-  req.session.reset();
-  res.redirect('/');
-});
+router.get('/logout', auth.logout);
 
 router.get('/register', function (req, res) {
   res.render('register', { title: 'Bldr | register' });

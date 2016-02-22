@@ -1,23 +1,14 @@
 var bcrypt = require('bcryptjs');
 var User = require('./models/user');
-var app = require('../app');
 
 
 var auth = {
 
   authenticate : function (req, res, next) {
-    if (req.session && req.session.user) {
-      User.findOne({ email: req.session.user.email }, function (err, user) {
-        if (!user) {
-          req.session.reset();
-          res.redirect('/login');
-        } else {
-          res.locals.user = user;
-          next();
-        }
-      })
-    } else {
+    if (!req.user) {
       res.redirect('/login');
+    } else {
+      next();
     }
   },
 
@@ -34,6 +25,11 @@ var auth = {
         }
       }
     })
+  },
+
+  logout : function (req, res) {
+    req.session.reset();
+    res.redirect('/');
   },
 
   register : function (req, res) {
@@ -53,8 +49,10 @@ var auth = {
         }
         res.render('register', { error: error });
       } else {
-        req.app.locals.user = user;
-        req.session.user = user;
+        var userWithoutPassword = user;
+        delete userWithoutPassword.password;
+        req.app.locals.user = userWithoutPassword;
+        req.session.user = userWithoutPassword;
         res.redirect('/profile');
       }
     })
