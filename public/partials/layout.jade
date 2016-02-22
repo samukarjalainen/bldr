@@ -4,7 +4,10 @@ html(lang='en')
 
   body
     .container
-      include navbar
+      if (user)
+        include navbar
+      else
+        include navbar-not-logged-in
 
     .container
       block content
