@@ -4,6 +4,9 @@ html, body {
   @extend %default-font;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  margin:0 auto;
+  padding:0;
+  height:100%;
 }
 
 h3 {
@@ -22,4 +25,13 @@ a {
   &:visited {
     color: $accent-color;
   }
+}
+
+.content-wrapper {
+  min-height:100%;
+  position:relative;
+}
+
+.view-wrapper {
+  padding-bottom:130px; /* Height of the footer element */
 }

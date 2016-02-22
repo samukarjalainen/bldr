@@ -32,6 +32,10 @@ $light-gray: #777;
   font-size: 28px;
 }
 
+%footer-font {
+  font-size: 14px;
+}
+
 /* Mixins */
 @mixin vertical-align {
   position: relative;

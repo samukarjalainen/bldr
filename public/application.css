@@ -5843,6 +5843,9 @@ html, body {
   font-size: 18px;
   color: #555; }
 
+#footer {
+  font-size: 14px; }
+
 /* Mixins */
 /* Specify colors */
 /* Placeholders */
@@ -5858,10 +5861,16 @@ html, body {
   font-size: 18px;
   color: #555; }
 
+#footer {
+  font-size: 14px; }
+
 /* Mixins */
 html, body {
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale; }
+  -moz-osx-font-smoothing: grayscale;
+  margin: 0 auto;
+  padding: 0;
+  height: 100%; }
 
 h3 {
   text-align: center;
@@ -5875,6 +5884,14 @@ a {
   a:visited {
     color: #ff6600; }
 
+.content-wrapper {
+  min-height: 100%;
+  position: relative; }
+
+.view-wrapper {
+  padding-bottom: 130px;
+  /* Height of the footer element */ }
+
 /* Specify colors */
 /* Placeholders */
 html, body {
@@ -5888,6 +5905,9 @@ html, body {
 .navbar-default .navbar-nav {
   font-size: 18px;
   color: #555; }
+
+#footer {
+  font-size: 14px; }
 
 /* Mixins */
 .navbar-default {
@@ -5933,11 +5953,20 @@ html, body {
   font-size: 18px;
   color: #555; }
 
+#footer {
+  font-size: 14px; }
+
 /* Mixins */
 #footer {
-  padding: 40px 20px;
-  height: 150px;
-  border-top: 1px solid #777; }
+  height: 130px;
+  border-top: 1px solid #777;
+  width: 1140px;
+  position: absolute;
+  bottom: 0; }
+  #footer p {
+    margin: 0; }
+  #footer .copyright-info {
+    margin-top: 40px; }
 
 /* Styles for index.jade */
 /* Specify colors */
@@ -5953,6 +5982,9 @@ html, body {
 .navbar-default .navbar-nav {
   font-size: 18px;
   color: #555; }
+
+#footer {
+  font-size: 14px; }
 
 /* Mixins */
 .punchline-wrapper {
@@ -5996,6 +6028,9 @@ html, body {
 .navbar-default .navbar-nav {
   font-size: 18px;
   color: #555; }
+
+#footer {
+  font-size: 14px; }
 
 /* Mixins */
 #clients {
@@ -6125,6 +6160,9 @@ html, body {
   font-size: 18px;
   color: #555; }
 
+#footer {
+  font-size: 14px; }
+
 /* Mixins */
 .contact .contact-message {
   margin: 0 auto 60px;
@@ -6153,6 +6191,9 @@ html, body {
 .navbar-default .navbar-nav {
   font-size: 18px;
   color: #555; }
+
+#footer {
+  font-size: 14px; }
 
 /* Mixins */
 .register-wrapper .register-headline {
@@ -6183,6 +6224,9 @@ html, body {
 .navbar-default .navbar-nav {
   font-size: 18px;
   color: #555; }
+
+#footer {
+  font-size: 14px; }
 
 /* Mixins */
 .login-wrapper .error {

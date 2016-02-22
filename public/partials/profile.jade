@@ -3,6 +3,9 @@ extends layout
 block content
   .profile-wrapper
 
-
-
     h3 Hello #{user.firstName}!
+
+    .user-info
+      p First name: #{user.firstName}
+      p Last name: #{user.lastName}
+      p E-mail: #{user.email}

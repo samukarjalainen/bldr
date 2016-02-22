@@ -1,8 +1,19 @@
 @import "variables";
 
+
 #footer {
-  padding: 40px 20px;
-  //background-color: #eee;
-  height: 150px;
+  @extend %footer-font;
+  height: 130px;
   border-top: 1px solid $light-gray;
+  width: 1140px;
+  position:absolute;
+  bottom:0;
+
+  p {
+    margin: 0;
+  }
+
+  .copyright-info {
+    margin-top: 40px;
+  }
 }

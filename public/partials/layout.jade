@@ -3,17 +3,19 @@ html(lang='en')
   include header
 
   body
-    .container
-      if (user)
-        include navbar
-      else
-        include navbar-not-logged-in
+    .content-wrapper
+      .view-wrapper
+        .container
+          if (user)
+            include navbar
+          else
+            include navbar-not-logged-in
 
-    .container
-      block content
+        .container
+          block content
 
-    .container
-      include footer
+      .container
+        include footer
 
   script(src='bower_components/jquery/dist/jquery.js')
   script(src='bower_components/bootstrap-sass/assets/javascripts/bootstrap.js')
