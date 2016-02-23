@@ -30,8 +30,18 @@ a {
 .content-wrapper {
   min-height:100%;
   position:relative;
-}
 
-.view-wrapper {
-  padding-bottom:130px; /* Height of the footer element */
+  .view-wrapper {
+    padding-bottom:130px; /* Height of the footer element */
+
+    .btn-default {
+      background-color: $accent-color;
+      color: #FFF;
+      opacity: 0.8;
+
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
 }

@@ -5899,10 +5899,15 @@ a {
 .content-wrapper {
   min-height: 100%;
   position: relative; }
-
-.view-wrapper {
-  padding-bottom: 130px;
-  /* Height of the footer element */ }
+  .content-wrapper .view-wrapper {
+    padding-bottom: 130px;
+    /* Height of the footer element */ }
+    .content-wrapper .view-wrapper .btn-default {
+      background-color: #ff6600;
+      color: #FFF;
+      opacity: 0.8; }
+      .content-wrapper .view-wrapper .btn-default:hover {
+        opacity: 1; }
 
 /* Specify colors */
 /* Placeholders */
@@ -5992,7 +5997,6 @@ html, body {
   #footer .copyright-info {
     margin-top: 40px; }
 
-/* Styles for index.jade */
 /* Specify colors */
 /* Placeholders */
 html, body {
@@ -6283,12 +6287,6 @@ html, body {
   margin: 30px auto 60px; }
   .register-wrapper form.form-horizontal .form-group label {
     display: inline-block; }
-  .register-wrapper form.form-horizontal .btn-default {
-    background-color: #ff6600;
-    color: #FFF;
-    opacity: 0.8; }
-    .register-wrapper form.form-horizontal .btn-default:hover {
-      opacity: 1; }
 
 /* Specify colors */
 /* Placeholders */
@@ -6322,9 +6320,3 @@ html, body {
   margin: 60px auto 120px; }
   .login-wrapper form.form-horizontal .form-group label {
     display: inline-block; }
-  .login-wrapper form.form-horizontal .btn-default {
-    background-color: #ff6600;
-    color: #FFF;
-    opacity: 0.8; }
-    .login-wrapper form.form-horizontal .btn-default:hover {
-      opacity: 1; }

@@ -1,0 +1,7 @@
+extends layout
+
+block content
+  .programs-wrapper
+    if (!user.programs)
+      h4 You don't have any programs yet
+      a(href="/programs/create").btn.btn-default Create

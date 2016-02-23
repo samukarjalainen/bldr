@@ -33,4 +33,8 @@ router.get('/profile', auth.authenticate, function (req, res) {
 
 router.post('/signup', auth.register);
 
+router.get('/programs', auth.authenticate, function (req, res) {
+  res.render('programs', { title: 'Programs' })
+});
+
 module.exports = router;
