@@ -28,6 +28,16 @@ block content
         .pl-number 3.
         .pl-text Exercise!
 
+  .start-now-wrapper
+      if (user)
+        h3.start-now-text Start making your program now
+        a(href="/start")
+          .text-button START NOW
+      else
+        h3.start-now-text Easy, right? Register to get started.
+        a(href="/register")
+          .text-button REGISTER
+
   // Testimonials section
   h3.testimonials See what our users say about Bldr
 

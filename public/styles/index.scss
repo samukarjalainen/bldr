@@ -41,6 +41,26 @@
   }
 }
 
+.start-now-wrapper {
+  text-align: center;
+  margin-bottom: 60px;
+
+  .text-button {
+    @include transition();
+    @extend %text-button-font;
+    display: inline-block;
+    text-align: center;
+    padding: 15px 40px;
+    border: 2px solid $accent-color;
+
+    &:hover {
+      color: white;
+      background-color: $accent-color;
+      opacity: 0.85;
+    }
+  }
+}
+
 .get-started {
   margin-bottom: 60px;
 }

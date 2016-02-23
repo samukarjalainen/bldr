@@ -12,6 +12,7 @@ $light-gray: #777;
 %default-font {
   font-family: 'Ubuntu', sans-serif;
   font-size: 16px;
+  font-weight: 400;
 }
 
 %navbar-brand-font {
@@ -24,16 +25,16 @@ $light-gray: #777;
   color: $navbar-color;
 }
 
-%emphasis-font {
-  font-size: 24px;
-}
 
-%emphasis-font-big {
-  font-size: 28px;
-}
 
 %footer-font {
   font-size: 14px;
+}
+
+%text-button-font {
+  font-size: 18px;
+  text-decoration: none;
+  font-weight: bold;
 }
 
 /* Mixins */
@@ -50,4 +51,12 @@ $light-gray: #777;
   -moz-border-radius: $radius;
   -ms-border-radius: $radius;
   border-radius: $radius;
+}
+
+@mixin transition( $val : ease 0.5s ) {
+  -webkit-transition: $val;
+  -moz-transition: $val;
+  -o-transition: $val;
+  -ms-transition: $val;
+  transition: $val;
 }

@@ -67,6 +67,7 @@
     }
 
     .owl-buttons div {
+      @include transition();
       color: $accent-color;
       display: inline-block;
       zoom: 1;
@@ -94,6 +95,7 @@
       *display: inline;/*IE7 life-saver */
 
       span {
+        @include transition();
         display: block;
         width: 14px;
         height: 14px;
@@ -104,13 +106,17 @@
         -moz-border-radius: 20px;
         border-radius: 20px;
         background: $accent-color;
+
+        &:hover {
+          filter: Alpha(Opacity=100);/*IE7 fix*/
+          opacity: 1;
+        }
       }
     }
   }
 }
 
-.owl-theme .owl-controls .owl-page.active span,
-.owl-theme .owl-controls.clickable .owl-page:hover span{
+.owl-theme .owl-controls .owl-page.active span {
   filter: Alpha(Opacity=100);/*IE7 fix*/
   opacity: 1;
 }
