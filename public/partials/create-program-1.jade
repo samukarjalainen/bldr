@@ -1,0 +1,79 @@
+extends layout
+
+block content
+
+  .create-program-wrapper
+    .row
+      h3.select-goal Choose your goal
+
+      .goal-wrapper.col-lg-4.col-sm-12
+        .goal-type.muscle
+          h3.goal-title Muscle
+          .goal-image-wrapper
+            img(src="../images/muscle.svg").goal-image.muscle-image.img-responsive
+          p.goal-text Build more muscle!
+
+      .goal-wrapper.col-lg-4.col-sm-12
+        .goal-type.strength
+          h3.goal-title Strength
+          .goal-image-wrapper
+            img(src="../images/strength.svg").goal-image.strength-image.img-responsive
+          p.goal-text Become stronger
+
+      .goal-wrapper.col-lg-4.col-sm-12
+        .goal-type.weight-loss
+          h3.goal-title Weight Loss
+          .goal-image-wrapper
+            img(src="../images/scale.svg").goal-image.scale-image.img-responsive
+          p.goal-text Lose weight
+
+    h4#error-message.alert-danger.hidden You must make a selection to continue
+
+    .make-selection-button-wrapper
+      button#make-selection-button.btn.btn-default.disabled(onclick="makeSelection()") Next
+
+  script.
+    var selection = "";
+    var nextBtn = document.getElementById('make-selection-button');
+    var errorMsg = document.getElementById('error-message');
+
+    // Anonymous function fired on page load
+    (function () {
+      var elements = document.getElementsByClassName('goal-type');
+      for (var i = 0; i < elements.length; i++) {
+        elements[i].addEventListener('click', function () {
+          for (var j = 0; j < elements.length; j++) {
+            elements[j].classList.remove('selected');
+          }
+          this.classList.add('selected');
+          if (this.classList.contains('muscle'))
+            enableButton('muscle');
+          else if (this.classList.contains('strength'))
+            enableButton('strength');
+          else if (this.classList.contains('weight-loss'))
+            enableButton('weight loss');
+          else
+            selection = "";
+        })
+      }
+    })();
+
+    // Utility function to ensure selection having been made
+    function enableButton(selectedGoal) {
+      selection = selectedGoal;
+      nextBtn.classList.remove('disabled');
+      errorMsg.classList.add('hidden');
+    }
+
+    function makeSelection() {
+      if (nextBtn.classList.contains('disabled')) {
+        errorMsg.classList.remove('hidden');
+      } else {
+        alert(selection);
+      }
+
+    }
+
+
+
+

@@ -1,0 +1,50 @@
+extends layout
+
+block content
+  .create-program-wrapper
+    .movements-wrapper.row
+      h3 Select movements
+      - var movements = ["Squat", "Leg Press", "Leg Extension"];
+      .movement.clearfix
+        .mov-label.col-lg-2.col-lg-offset-3
+          p.pull-right Legs:
+        .mov-selection.col-lg-6
+          select.selectpicker(title="Select movement...")
+            each movement, i in movements
+              option(value=i) #{movement}
+
+      .movement.clearfix
+        .mov-label.col-lg-2.col-lg-offset-3
+          .pull-right Back:
+        .mov-selection.col-lg-3
+          select.selectpicker(title="Select movement...")
+            each movement, i in movements
+              option(value=i) #{movement}
+
+      .movement.clearfix
+        .mov-label.col-lg-2.col-lg-offset-3
+          .pull-right Chest:
+        .mov-selection.col-lg-3
+          select.selectpicker(title="Select movement...")
+            each movement, i in movements
+              option(value=i) #{movement}
+
+      .movement.clearfix
+        .mov-label.col-lg-2.col-lg-offset-3
+          .pull-right Shoulders:
+        .mov-selection.col-lg-3
+          select.selectpicker(title="Select movement...")
+            each movement, i in movements
+              option(value=i) #{movement}
+
+      .movement.clearfix
+        .mov-label.col-lg-2.col-lg-offset-3
+          .pull-right Core:
+        .mov-selection.col-lg-3
+          select.selectpicker(title="Select movement...")
+            each movement, i in movements
+              option(value=i) #{movement}
+
+      button.btn.btn-default(onclick="createProgram()") Create
+
+

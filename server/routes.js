@@ -38,7 +38,11 @@ router.get('/programs', auth.authenticate, function (req, res) {
 });
 
 router.get('/create', auth.authenticate, function (req, res) {
-  res.render('create-program', { title: 'Programs' });
+  res.render('create-program-1', { title: 'Programs' });
+});
+
+router.post('/create-2', auth.authenticate, function (req, res) {
+  
 });
 
 module.exports = router;

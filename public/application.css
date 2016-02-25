@@ -6373,6 +6373,7 @@ html, body {
 
 /* Mixins */
 .create-program-wrapper {
+  text-align: center;
   /* Styles for Movements-section */ }
   .create-program-wrapper .goal-wrapper {
     margin-bottom: 30px; }
@@ -6405,6 +6406,8 @@ html, body {
           margin-bottom: 30px; }
       .create-program-wrapper .goal-wrapper .goal-type .goal-text {
         text-align: center; }
+  .create-program-wrapper #error-message {
+    display: inline-block; }
   .create-program-wrapper .movements-wrapper .btn-default {
     background-color: #fff;
     color: #333; }

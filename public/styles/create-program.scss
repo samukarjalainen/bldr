@@ -1,6 +1,9 @@
 @import "variables";
 
 .create-program-wrapper {
+  text-align: center;
+
+
   .goal-wrapper {
     margin-bottom: 30px;
     .goal-type {
@@ -56,6 +59,10 @@
 
       }
     }
+  }
+
+  #error-message {
+    display: inline-block;
   }
 
   /* Styles for Movements-section */

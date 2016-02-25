@@ -1,4 +1,31 @@
 var selection = "";
+document.program = {
+  "legs": {
+    "movement": "Squat",
+    "sets": "3-4",
+    "reps": "8-10"
+  },
+  "back": {
+    "movement": "Barbell row",
+    "sets": "3-4",
+    "reps": "8-12"
+  },
+  "chest": {
+    "movement": "Bench press",
+    "sets": "3-4",
+    "reps": "8-12"
+  },
+  "shoulders": {
+    "movement": "Military press",
+    "sets": "3-4",
+    "reps": "8-12"
+  },
+  "core": {
+    "movement": "Ab wheel",
+    "sets": "2-3",
+    "reps": "5-15"
+  }
+};
 
 $(document).ready(function() {
 
