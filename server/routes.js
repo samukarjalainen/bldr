@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var auth = require('./auth.js');
+var program = require('./program.js');
 
 
 router.get('/', function(req, res) {
@@ -41,8 +42,14 @@ router.get('/create', auth.authenticate, function (req, res) {
   res.render('create-program-1', { title: 'Programs' });
 });
 
-router.post('/create-2', auth.authenticate, function (req, res) {
-  
+router.get('/create-2', auth.authenticate, function (req, res) {
+  if (!req.app.locals.selection) {
+    res.redirect('/create');
+  } else {
+    res.render('create-program-2', { title: 'Programs', selectedGoal: req.app.locals.selection });
+  }
 });
+
+router.post('/create', auth.authenticate, program.selectGoal);
 
 module.exports = router;

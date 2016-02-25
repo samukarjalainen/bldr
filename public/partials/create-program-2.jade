@@ -3,12 +3,22 @@ extends layout
 block content
   .create-program-wrapper
     .movements-wrapper.row
+      h3 You chose <span class="special-word">#{selectedGoal}</span>
+      if (selectedGoal === 'muscle')
+        p Building muscle is best done with moderate resting periods and semi-long to long sets.
+      if (selectedGoal === 'strength')
+        p Strength is best trained by short sets with long resting periods between sets.
+      if (selectedGoal === 'weight loss')
+        p Losing weight is best achieved with long sets and short resting periods.
+
+
       h3 Select movements
       - var movements = ["Squat", "Leg Press", "Leg Extension"];
+
       .movement.clearfix
         .mov-label.col-lg-2.col-lg-offset-3
-          p.pull-right Legs:
-        .mov-selection.col-lg-6
+          .pull-right Legs:
+        .mov-selection.col-lg-3
           select.selectpicker(title="Select movement...")
             each movement, i in movements
               option(value=i) #{movement}
@@ -45,6 +55,6 @@ block content
             each movement, i in movements
               option(value=i) #{movement}
 
-      button.btn.btn-default(onclick="createProgram()") Create
+      button.btn.btn-default(onclick="checkAndPostMovements()") Create
 
 

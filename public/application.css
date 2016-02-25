@@ -6374,7 +6374,10 @@ html, body {
 /* Mixins */
 .create-program-wrapper {
   text-align: center;
+  margin-bottom: 120px;
   /* Styles for Movements-section */ }
+  .create-program-wrapper .special-word {
+    color: #ff6600; }
   .create-program-wrapper .goal-wrapper {
     margin-bottom: 30px; }
     .create-program-wrapper .goal-wrapper .goal-type {
@@ -6408,6 +6411,8 @@ html, body {
         text-align: center; }
   .create-program-wrapper #error-message {
     display: inline-block; }
+  .create-program-wrapper .make-selection-button-wrapper {
+    margin-top: 30px; }
   .create-program-wrapper .movements-wrapper .btn-default {
     background-color: #fff;
     color: #333; }

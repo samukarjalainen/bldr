@@ -65,14 +65,16 @@ block content
       errorMsg.classList.add('hidden');
     }
 
+    // Check if a selection is made and post request
     function makeSelection() {
       if (nextBtn.classList.contains('disabled')) {
         errorMsg.classList.remove('hidden');
       } else {
-        alert(selection);
+        postSelection('/create', {selection: selection});
       }
-
     }
+
+
 
 
 
