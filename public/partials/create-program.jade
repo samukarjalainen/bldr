@@ -1,0 +1,118 @@
+extends layout
+
+block content
+
+  .create-program-wrapper
+    .row
+      h3.select-goal Choose your goal
+
+      .goal-wrapper.col-lg-4.col-sm-12
+        .goal-type.muscle
+          h3.goal-title Muscle
+          .goal-image-wrapper
+            img(src="../images/muscle.svg").goal-image.muscle-image.img-responsive
+          p.goal-text Build more muscle!
+
+      .goal-wrapper.col-lg-4.col-sm-12
+        .goal-type.strength
+          h3.goal-title Strength
+          .goal-image-wrapper
+            img(src="../images/strength.svg").goal-image.strength-image.img-responsive
+          p.goal-text Become stronger
+
+      .goal-wrapper.col-lg-4.col-sm-12
+        .goal-type.weight-loss
+          h3.goal-title Weight Loss
+          .goal-image-wrapper
+            img(src="../images/scale.svg").goal-image.scale-image.img-responsive
+          p.goal-text Lose weight
+
+    .movements-wrapper.row
+      h3 Select movements
+      - var movements = ["Squat", "Leg Press", "Leg Extension"];
+      .movement.clearfix
+        .mov-label.col-lg-2.col-lg-offset-3
+          p.pull-right Legs:
+        .mov-selection.col-lg-6
+          select.selectpicker(title="Select movement...")
+            each movement, i in movements
+              option(value=i) #{movement}
+
+      .movement.clearfix
+        .mov-label.col-lg-2.col-lg-offset-3
+          .pull-right Back:
+        .mov-selection.col-lg-3
+          select.selectpicker(title="Select movement...")
+            each movement, i in movements
+              option(value=i) #{movement}
+
+      .movement.clearfix
+        .mov-label.col-lg-2.col-lg-offset-3
+          .pull-right Chest:
+        .mov-selection.col-lg-3
+          select.selectpicker(title="Select movement...")
+            each movement, i in movements
+              option(value=i) #{movement}
+
+      .movement.clearfix
+        .mov-label.col-lg-2.col-lg-offset-3
+          .pull-right Shoulders:
+        .mov-selection.col-lg-3
+          select.selectpicker(title="Select movement...")
+            each movement, i in movements
+              option(value=i) #{movement}
+
+      .movement.clearfix
+        .mov-label.col-lg-2.col-lg-offset-3
+          .pull-right Core:
+        .mov-selection.col-lg-3
+          select.selectpicker(title="Select movement...")
+            each movement, i in movements
+              option(value=i) #{movement}
+
+      button.btn.btn-default(onclick="createProgram()") Create 
+
+    .program-table-wrapper.row
+      .program-table
+
+
+
+
+
+
+
+
+
+
+
+
+
+  script.
+    function selectGoal () {
+      var elements = document.getElementsByClassName('goal-type');
+      //selection = "";
+      for (var i = 0; i < elements.length; i++) {
+        elements[i].addEventListener('click', function () {
+          for (var j = 0; j < elements.length; j++) {
+            elements[j].classList.remove('selected');
+          }
+          this.classList.add('selected');
+          if (this.classList.contains('muscle'))
+            selection = "muscle";
+          else if (this.classList.contains('strength'))
+            selection = "strength";
+          else if (this.classList.contains('weight-loss'))
+            selection = "weight loss";
+          else
+            selection = "";
+          console.log(selection);
+          return selection;
+        })
+      }
+    }
+
+    function showProgram () {
+
+    }
+    selectGoal();
+

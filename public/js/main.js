@@ -1,3 +1,5 @@
+var selection = "";
+
 $(document).ready(function() {
 
   clientCarousel();
@@ -20,4 +22,4 @@ function clientCarousel() {
     autoPlay: 7000,
     stopOnHover: true
   });
-};
+}

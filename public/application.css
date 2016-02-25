@@ -16,6 +16,9 @@
 @import url(https://fonts.googleapis.com/css?family=Ubuntu:400,400italic);
 @import url(https://fonts.googleapis.com/css?family=Ubuntu:400,400italic);
 @import url(https://fonts.googleapis.com/css?family=Ubuntu:400,400italic);
+@import url(https://fonts.googleapis.com/css?family=Ubuntu:400,400italic);
+@import url(https://fonts.googleapis.com/css?family=Ubuntu:400,400italic);
+@import url(../bower_components/bootstrap-select/dist/css/bootstrap-select.min.css);
 html {
   font-family: sans-serif;
   -ms-text-size-adjust: 100%;
@@ -6027,8 +6030,8 @@ html, body {
   .punchline-wrapper .punchline-item {
     text-align: center; }
     .punchline-wrapper .punchline-item .pl-image {
-      height: 180px;
-      margin: 30px auto; }
+      height: 170px;
+      margin: 40px auto 30px; }
     .punchline-wrapper .punchline-item .pl-underline:after {
       content: '';
       display: block;
@@ -6320,3 +6323,93 @@ html, body {
   margin: 60px auto 120px; }
   .login-wrapper form.form-horizontal .form-group label {
     display: inline-block; }
+
+/* Specify colors */
+/* Placeholders */
+html, body {
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 16px;
+  font-weight: 400; }
+
+.navbar .navbar-header .navbar-brand {
+  font-size: 32px;
+  color: #333; }
+
+.navbar-default .navbar-nav {
+  font-size: 18px;
+  color: #555; }
+
+#footer {
+  font-size: 14px; }
+
+.start-now-wrapper .text-button {
+  font-size: 18px;
+  text-decoration: none;
+  font-weight: bold; }
+
+/* Mixins */
+/* Specify colors */
+/* Placeholders */
+html, body {
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 16px;
+  font-weight: 400; }
+
+.navbar .navbar-header .navbar-brand {
+  font-size: 32px;
+  color: #333; }
+
+.navbar-default .navbar-nav {
+  font-size: 18px;
+  color: #555; }
+
+#footer {
+  font-size: 14px; }
+
+.start-now-wrapper .text-button {
+  font-size: 18px;
+  text-decoration: none;
+  font-weight: bold; }
+
+/* Mixins */
+.create-program-wrapper {
+  /* Styles for Movements-section */ }
+  .create-program-wrapper .goal-wrapper {
+    margin-bottom: 30px; }
+    .create-program-wrapper .goal-wrapper .goal-type {
+      padding: 20px;
+      cursor: pointer;
+      border: 10px solid transparent; }
+      .create-program-wrapper .goal-wrapper .goal-type:hover .goal-image-wrapper .goal-image {
+        top: -10px; }
+      .create-program-wrapper .goal-wrapper .goal-type:hover .goal-image-wrapper .muscle-image {
+        height: 190px; }
+      .create-program-wrapper .goal-wrapper .goal-type:hover .goal-image-wrapper .strength-image, .create-program-wrapper .goal-wrapper .goal-type:hover .goal-image-wrapper .scale-image {
+        height: 160px; }
+      .create-program-wrapper .goal-wrapper .goal-type.selected {
+        -webkit-border-radius: 4px;
+        -moz-border-radius: 4px;
+        -ms-border-radius: 4px;
+        border-radius: 4px;
+        border: 10px solid rgba(255, 102, 0, 0.7); }
+      .create-program-wrapper .goal-wrapper .goal-type .goal-image-wrapper {
+        height: 170px;
+        position: relative; }
+        .create-program-wrapper .goal-wrapper .goal-type .goal-image-wrapper .goal-image {
+          height: 170px;
+          margin: 0 auto;
+          overflow: hidden;
+          position: relative; }
+        .create-program-wrapper .goal-wrapper .goal-type .goal-image-wrapper .strength-image, .create-program-wrapper .goal-wrapper .goal-type .goal-image-wrapper .scale-image {
+          height: 140px;
+          margin-bottom: 30px; }
+      .create-program-wrapper .goal-wrapper .goal-type .goal-text {
+        text-align: center; }
+  .create-program-wrapper .movements-wrapper .btn-default {
+    background-color: #fff;
+    color: #333; }
+  .create-program-wrapper .movements-wrapper .movement {
+    display: block;
+    margin-bottom: 15px; }
+    .create-program-wrapper .movements-wrapper .movement p {
+      display: inline-block; }
