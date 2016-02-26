@@ -52,4 +52,6 @@ router.get('/create-2', auth.authenticate, function (req, res) {
 
 router.post('/create', auth.authenticate, program.selectGoal);
 
+router.get('/create-exercises', program.createData);
+
 module.exports = router;

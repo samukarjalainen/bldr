@@ -6413,11 +6413,11 @@ html, body {
     display: inline-block; }
   .create-program-wrapper .make-selection-button-wrapper {
     margin-top: 30px; }
-  .create-program-wrapper .movements-wrapper .btn-default {
+  .create-program-wrapper .exercises-wrapper .btn-default {
     background-color: #fff;
     color: #333; }
-  .create-program-wrapper .movements-wrapper .movement {
+  .create-program-wrapper .exercises-wrapper .exercise {
     display: block;
     margin-bottom: 15px; }
-    .create-program-wrapper .movements-wrapper .movement p {
+    .create-program-wrapper .exercises-wrapper .exercise p {
       display: inline-block; }

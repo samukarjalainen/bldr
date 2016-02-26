@@ -2,7 +2,7 @@ extends layout
 
 block content
   .create-program-wrapper
-    .movements-wrapper.row
+    .exercises-wrapper.row
       h3 You chose <span class="special-word">#{selectedGoal}</span>
       if (selectedGoal === 'muscle')
         p Building muscle is best done with moderate resting periods and semi-long to long sets.
@@ -12,49 +12,49 @@ block content
         p Losing weight is best achieved with long sets and short resting periods.
 
 
-      h3 Select movements
-      - var movements = ["Squat", "Leg Press", "Leg Extension"];
+      h3 Select exercises
+      - var exercises = ["Squat", "Leg Press", "Leg Extension"];
 
-      .movement.clearfix
-        .mov-label.col-lg-2.col-lg-offset-3
+      .exercise.clearfix
+        .exc-label.col-lg-2.col-lg-offset-3
           .pull-right Legs:
-        .mov-selection.col-lg-3
-          select.selectpicker(title="Select movement...")
-            each movement, i in movements
-              option(value=i) #{movement}
+        .exc-selection.col-lg-3
+          select.selectpicker(title="Select exercise...")
+            each exercise, i in exercises
+              option(value=i) #{exercise}
 
-      .movement.clearfix
-        .mov-label.col-lg-2.col-lg-offset-3
+      .exercise.clearfix
+        .exc-label.col-lg-2.col-lg-offset-3
           .pull-right Back:
-        .mov-selection.col-lg-3
-          select.selectpicker(title="Select movement...")
-            each movement, i in movements
-              option(value=i) #{movement}
+        .exc-selection.col-lg-3
+          select.selectpicker(title="Select exercise...")
+            each exercise, i in exercises
+              option(value=i) #{exercise}
 
-      .movement.clearfix
-        .mov-label.col-lg-2.col-lg-offset-3
+      .exercise.clearfix
+        .exc-label.col-lg-2.col-lg-offset-3
           .pull-right Chest:
-        .mov-selection.col-lg-3
-          select.selectpicker(title="Select movement...")
-            each movement, i in movements
-              option(value=i) #{movement}
+        .exc-selection.col-lg-3
+          select.selectpicker(title="Select exercise...")
+            each exercise, i in exercises
+              option(value=i) #{exercise}
 
-      .movement.clearfix
-        .mov-label.col-lg-2.col-lg-offset-3
+      .exercise.clearfix
+        .exc-label.col-lg-2.col-lg-offset-3
           .pull-right Shoulders:
-        .mov-selection.col-lg-3
-          select.selectpicker(title="Select movement...")
-            each movement, i in movements
-              option(value=i) #{movement}
+        .exc-selection.col-lg-3
+          select.selectpicker(title="Select exercise...")
+            each exercise, i in exercises
+              option(value=i) #{exercise}
 
-      .movement.clearfix
-        .mov-label.col-lg-2.col-lg-offset-3
+      .exercise.clearfix
+        .exc-label.col-lg-2.col-lg-offset-3
           .pull-right Core:
-        .mov-selection.col-lg-3
-          select.selectpicker(title="Select movement...")
-            each movement, i in movements
-              option(value=i) #{movement}
+        .exc-selection.col-lg-3
+          select.selectpicker(title="Select exercise...")
+            each exercise, i in exercises
+              option(value=i) #{exercise}
 
-      button.btn.btn-default(onclick="checkAndPostMovements()") Create
+      button.btn.btn-default(onclick="checkAndPostExercises()") Create
 
 

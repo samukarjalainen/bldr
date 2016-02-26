@@ -51,7 +51,7 @@ function clientCarousel() {
   });
 }
 
-function checkAndPostMovements() {
+function checkAndPostExercises() {
   var elements = document.getElementsByClassName('btn dropdown-toggle btn-default');
   for (var i = 0; i < elements.length; i++) {
     console.log(elements[i].title);
