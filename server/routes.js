@@ -42,11 +42,11 @@ router.get('/create', auth.authenticate, function (req, res) {
   res.render('create-program-1', { title: 'Programs' });
 });
 
-router.get('/create-2', auth.authenticate, function (req, res) {
+router.get('/create-2', auth.authenticate, program.getExercises,  function (req, res) {
   if (!req.app.locals.selection) {
     res.redirect('/create');
   } else {
-    res.render('create-program-2', { title: 'Programs', selectedGoal: req.app.locals.selection });
+    res.render('create-program-2', { title: 'Programs', selectedGoal: req.app.locals.selection, exercises: req.app.locals.exercises });
   }
 });
 

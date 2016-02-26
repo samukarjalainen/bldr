@@ -34,8 +34,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(sessions({
   cookieName: 'session',
   secret: 'shhhsupersecretstuffhere',
-  duration: 60 * 60 * 1000,
-  activeDuration: 5 * 60 * 1000
+  duration: 5 * 24 * 60 * 60 * 1000,
+  activeDuration: 60 * 60 * 1000
 }));
 app.use(function (req, res, next) {
   if (req.session && req.session.user) {

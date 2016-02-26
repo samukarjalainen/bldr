@@ -1,27 +1,57 @@
 extends layout
 
 block content
+
   .create-program-wrapper
     .exercises-wrapper.row
+      - var sets, reps, rest;
+      script(type='text/javascript').
+        var exercisesArray = !{JSON.stringify(exercises)};
+
       h3 You chose <span class="special-word">#{selectedGoal}</span>
       if (selectedGoal === 'muscle')
         p Building muscle is best done with moderate resting periods and semi-long to long sets.
+        script.
+          sets = "3-4";
+          reps = "6-12";
+          rest = "90s";
       if (selectedGoal === 'strength')
         p Strength is best trained by short sets with long resting periods between sets.
+        script.
+          sets = "4-5";
+          reps = "4-6";
+          rest = "120s";
       if (selectedGoal === 'weight loss')
         p Losing weight is best achieved with long sets and short resting periods.
+        script.
+          sets = "3-4";
+          reps = "8-15";
+          rest = "60s";
+
+
+      // Populate arrays for each exercise type
+      //script.
+      //  legs = [];
+      //  for (var i = 0; i < exercisesArray.length; i++) {
+      //    if (exercisesArray[i].type === 'legs') {
+      //      console.log(exercisesArray[i]);
+      //      //legs.push(e);
+      //    }
+      //  }
+
+
 
 
       h3 Select exercises
-      - var exercises = ["Squat", "Leg Press", "Leg Extension"];
-
       .exercise.clearfix
         .exc-label.col-lg-2.col-lg-offset-3
           .pull-right Legs:
         .exc-selection.col-lg-3
           select.selectpicker(title="Select exercise...")
             each exercise, i in exercises
-              option(value=i) #{exercise}
+              - if (exercise.type === 'legs')
+                option(value=i) #{exercise.title}
+
 
       .exercise.clearfix
         .exc-label.col-lg-2.col-lg-offset-3
@@ -29,7 +59,8 @@ block content
         .exc-selection.col-lg-3
           select.selectpicker(title="Select exercise...")
             each exercise, i in exercises
-              option(value=i) #{exercise}
+              - if (exercise.type === 'back')
+                option(value=i) #{exercise.title}
 
       .exercise.clearfix
         .exc-label.col-lg-2.col-lg-offset-3
@@ -37,7 +68,8 @@ block content
         .exc-selection.col-lg-3
           select.selectpicker(title="Select exercise...")
             each exercise, i in exercises
-              option(value=i) #{exercise}
+              - if (exercise.type === 'chest')
+                option(value=i) #{exercise.title}
 
       .exercise.clearfix
         .exc-label.col-lg-2.col-lg-offset-3
@@ -45,7 +77,8 @@ block content
         .exc-selection.col-lg-3
           select.selectpicker(title="Select exercise...")
             each exercise, i in exercises
-              option(value=i) #{exercise}
+              - if (exercise.type === 'shoulders')
+                option(value=i) #{exercise.title}
 
       .exercise.clearfix
         .exc-label.col-lg-2.col-lg-offset-3
@@ -53,7 +86,8 @@ block content
         .exc-selection.col-lg-3
           select.selectpicker(title="Select exercise...")
             each exercise, i in exercises
-              option(value=i) #{exercise}
+              - if (exercise.type === 'core')
+                option(value=i) #{exercise.title}
 
       button.btn.btn-default(onclick="checkAndPostExercises()") Create
 
