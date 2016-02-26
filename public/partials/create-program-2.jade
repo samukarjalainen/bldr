@@ -28,67 +28,55 @@ block content
           reps = "8-15";
           rest = "60s";
 
-
-      // Populate arrays for each exercise type
-      //script.
-      //  legs = [];
-      //  for (var i = 0; i < exercisesArray.length; i++) {
-      //    if (exercisesArray[i].type === 'legs') {
-      //      console.log(exercisesArray[i]);
-      //      //legs.push(e);
-      //    }
-      //  }
-
-
-
-
       h3 Select exercises
-      .exercise.clearfix
-        .exc-label.col-lg-2.col-lg-offset-3
-          .pull-right Legs:
-        .exc-selection.col-lg-3
-          select.selectpicker(title="Select exercise...")
-            each exercise, i in exercises
-              - if (exercise.type === 'legs')
-                option(value=i) #{exercise.title}
 
+      form(name="exerciseForm", class="form-horizontal", method="POST", action="/create-2", enctype="application/x-www-form-urlencoded")
 
-      .exercise.clearfix
-        .exc-label.col-lg-2.col-lg-offset-3
-          .pull-right Back:
-        .exc-selection.col-lg-3
-          select.selectpicker(title="Select exercise...")
-            each exercise, i in exercises
-              - if (exercise.type === 'back')
-                option(value=i) #{exercise.title}
+        .form-group
+          label(for="legs", class="control-label col-sm-2 col-lg-offset-3") Legs:
+          .col-sm-10.col-lg-3
+            select(name="legs", id=legs, class="form-control")
+              each exercise, e in exercises
+                - if (exercise.type === 'legs')
+                  option(value=exercise) #{exercise.title}
 
-      .exercise.clearfix
-        .exc-label.col-lg-2.col-lg-offset-3
-          .pull-right Chest:
-        .exc-selection.col-lg-3
-          select.selectpicker(title="Select exercise...")
-            each exercise, i in exercises
-              - if (exercise.type === 'chest')
-                option(value=i) #{exercise.title}
+        .form-group
+          label(for="back", class="control-label col-sm-2 col-lg-offset-3") Back:
+          .col-sm-10.col-lg-3
+            select(name="back", id=back, class="form-control")
+              each exercise, e in exercises
+                - if (exercise.type === 'back')
+                  option(value=exercise) #{exercise.title}
 
-      .exercise.clearfix
-        .exc-label.col-lg-2.col-lg-offset-3
-          .pull-right Shoulders:
-        .exc-selection.col-lg-3
-          select.selectpicker(title="Select exercise...")
-            each exercise, i in exercises
-              - if (exercise.type === 'shoulders')
-                option(value=i) #{exercise.title}
+        .form-group
+          label(for="chest", class="control-label col-sm-2 col-lg-offset-3") Chest:
+          .col-sm-10.col-lg-3
+            select(name="chest", id=chest, class="form-control")
+              each exercise, e in exercises
+                - if (exercise.type === 'chest')
+                  option(value=exercise) #{exercise.title}
 
-      .exercise.clearfix
-        .exc-label.col-lg-2.col-lg-offset-3
-          .pull-right Core:
-        .exc-selection.col-lg-3
-          select.selectpicker(title="Select exercise...")
-            each exercise, i in exercises
-              - if (exercise.type === 'core')
-                option(value=i) #{exercise.title}
+        .form-group
+          label(for="shoulders", class="control-label col-sm-2 col-lg-offset-3") Shoulders:
+          .col-sm-10.col-lg-3
+            select(name="shoulders", id=shoulders, class="form-control")
+              each exercise, e in exercises
+                - if (exercise.type === 'shoulders')
+                  option(value=exercise) #{exercise.title}
 
-      button.btn.btn-default(onclick="checkAndPostExercises()") Create
+        .form-group
+          label(for="core", class="control-label col-sm-2 col-lg-offset-3") Core:
+          .col-sm-10.col-lg-3
+            select(name="core", id=core, class="form-control")
+              each exercise, e in exercises
+                - if (exercise.type === 'core')
+                  option(value=exercise) #{exercise.title}
+
+        input(type="hidden", value="#{selectedGoal}", name="goal")
+
+        .form-group
+          .col-lg-offset-5.col-sm-10.col-lg-1
+            button(type="submit", class="btn btn-default") Create program
+
 
 

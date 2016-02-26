@@ -25,13 +25,6 @@ function clientCarousel() {
   });
 }
 
-function checkAndPostExercises() {
-  var elements = document.getElementsByClassName('btn dropdown-toggle btn-default');
-  for (var i = 0; i < elements.length; i++) {
-    console.log(elements[i].title);
-  }
-}
-
 function postSelection(path, params, method) {
   method = method || "post"; // Set method to post by default if not specified.
 

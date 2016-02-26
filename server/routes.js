@@ -50,6 +50,12 @@ router.get('/create-2', auth.authenticate, program.getExercises,  function (req,
   }
 });
 
+router.post('/create-2', auth.authenticate, function (req, res) {
+  console.log("Program posted --->");
+  console.log(req.body);
+  res.render('create-program-3');
+});
+
 router.post('/create', auth.authenticate, program.selectGoal);
 
 router.get('/create-exercises', program.createData);
