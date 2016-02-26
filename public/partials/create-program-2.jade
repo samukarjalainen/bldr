@@ -5,28 +5,18 @@ block content
   .create-program-wrapper
     .exercises-wrapper.row
       - var sets, reps, rest;
+      - var exercisesArray;
       script(type='text/javascript').
-        var exercisesArray = !{JSON.stringify(exercises)};
+        exercisesArray = !{JSON.stringify(exercises)};
+        //console.log(exercisesArray);
 
       h3 You chose <span class="special-word">#{selectedGoal}</span>
       if (selectedGoal === 'muscle')
         p Building muscle is best done with moderate resting periods and semi-long to long sets.
-        script.
-          sets = "3-4";
-          reps = "6-12";
-          rest = "90s";
       if (selectedGoal === 'strength')
         p Strength is best trained by short sets with long resting periods between sets.
-        script.
-          sets = "4-5";
-          reps = "4-6";
-          rest = "120s";
       if (selectedGoal === 'weight loss')
         p Losing weight is best achieved with long sets and short resting periods.
-        script.
-          sets = "3-4";
-          reps = "8-15";
-          rest = "60s";
 
       h3 Select exercises
 
@@ -35,10 +25,10 @@ block content
         .form-group
           label(for="legs", class="control-label col-sm-2 col-lg-offset-3") Legs:
           .col-sm-10.col-lg-3
-            select(name="legs", id=legs, class="form-control")
+            select(name="legs", id="legs", class="form-control")
               each exercise, e in exercises
                 - if (exercise.type === 'legs')
-                  option(value=exercise) #{exercise.title}
+                  option(value="#{JSON.stringify(exercise)}") #{exercise.title}
 
         .form-group
           label(for="back", class="control-label col-sm-2 col-lg-offset-3") Back:
@@ -46,7 +36,7 @@ block content
             select(name="back", id=back, class="form-control")
               each exercise, e in exercises
                 - if (exercise.type === 'back')
-                  option(value=exercise) #{exercise.title}
+                  option(value=value="#{JSON.stringify(exercise)}") #{exercise.title}
 
         .form-group
           label(for="chest", class="control-label col-sm-2 col-lg-offset-3") Chest:
@@ -54,7 +44,7 @@ block content
             select(name="chest", id=chest, class="form-control")
               each exercise, e in exercises
                 - if (exercise.type === 'chest')
-                  option(value=exercise) #{exercise.title}
+                  option(value=value="#{JSON.stringify(exercise)}") #{exercise.title}
 
         .form-group
           label(for="shoulders", class="control-label col-sm-2 col-lg-offset-3") Shoulders:
@@ -62,7 +52,7 @@ block content
             select(name="shoulders", id=shoulders, class="form-control")
               each exercise, e in exercises
                 - if (exercise.type === 'shoulders')
-                  option(value=exercise) #{exercise.title}
+                  option(value=value="#{JSON.stringify(exercise)}") #{exercise.title}
 
         .form-group
           label(for="core", class="control-label col-sm-2 col-lg-offset-3") Core:
@@ -70,9 +60,10 @@ block content
             select(name="core", id=core, class="form-control")
               each exercise, e in exercises
                 - if (exercise.type === 'core')
-                  option(value=exercise) #{exercise.title}
+                  option(value=value="#{JSON.stringify(exercise)}") #{exercise.title}
 
         input(type="hidden", value="#{selectedGoal}", name="goal")
+
 
         .form-group
           .col-lg-offset-5.col-sm-10.col-lg-1

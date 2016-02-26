@@ -1,4 +1,5 @@
 var Exercise = require('./models/exercise');
+var Program = require('./models/program');
 
 var program = {
 
@@ -23,6 +24,46 @@ var program = {
       } else {
         console.log("Error fetching exercises");
         throw err;
+      }
+    });
+  },
+
+  createProgram : function (req, res, next) {
+    console.log("createProgram called");
+    var sets, reps, rest;
+
+    if (req.body.goal === 'muscle') {
+      sets = "3-4";
+      reps = "8-12";
+      rest = "90s";
+    } else if (req.body.goal === 'strength') {
+      sets = "4-5";
+      reps = "4-6";
+      rest = "120s";
+    } else if (req.body.goal === 'weight loss') {
+      sets = "3-5";
+      reps = "8-15";
+      rest = "60s";
+    }
+
+    var program = new Program({
+      legs: req.body.legs,
+      back: req.body.back,
+      chest: req.body.chest,
+      shoulders: req.body.shoulders,
+      core: req.body.core,
+      goal: req.body.goal,
+      sets: sets,
+      reps: reps,
+      rest: rest
+    });
+    console.log(program);
+    program.save(function (err, program) {
+      if (err) {
+        return console.log(err);
+      } else {
+        req.app.locals.program = program;
+        next();
       }
     });
   },

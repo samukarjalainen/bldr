@@ -1,6 +1,3 @@
-legs = [];
-
-
 $(document).ready(function() {
 
   clientCarousel();

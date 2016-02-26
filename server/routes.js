@@ -50,9 +50,7 @@ router.get('/create-2', auth.authenticate, program.getExercises,  function (req,
   }
 });
 
-router.post('/create-2', auth.authenticate, function (req, res) {
-  console.log("Program posted --->");
-  console.log(req.body);
+router.post('/create-2', auth.authenticate, program.createProgram, function (req, res) {
   res.render('create-program-3');
 });
 
