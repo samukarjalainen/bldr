@@ -28,7 +28,7 @@ block content
             select(name="legs", id="legs", class="form-control")
               each exercise, e in exercises
                 - if (exercise.type === 'legs')
-                  option(value="#{JSON.stringify(exercise)}") #{exercise.title}
+                  option(value=exercise.title) #{exercise.title}
 
         .form-group
           label(for="back", class="control-label col-sm-2 col-lg-offset-3") Back:
@@ -36,7 +36,7 @@ block content
             select(name="back", id=back, class="form-control")
               each exercise, e in exercises
                 - if (exercise.type === 'back')
-                  option(value=value="#{JSON.stringify(exercise)}") #{exercise.title}
+                  option(value=exercise.title) #{exercise.title}
 
         .form-group
           label(for="chest", class="control-label col-sm-2 col-lg-offset-3") Chest:
@@ -44,7 +44,7 @@ block content
             select(name="chest", id=chest, class="form-control")
               each exercise, e in exercises
                 - if (exercise.type === 'chest')
-                  option(value=value="#{JSON.stringify(exercise)}") #{exercise.title}
+                  option(value=exercise.title) #{exercise.title}
 
         .form-group
           label(for="shoulders", class="control-label col-sm-2 col-lg-offset-3") Shoulders:
@@ -52,7 +52,7 @@ block content
             select(name="shoulders", id=shoulders, class="form-control")
               each exercise, e in exercises
                 - if (exercise.type === 'shoulders')
-                  option(value=value="#{JSON.stringify(exercise)}") #{exercise.title}
+                  option(value=exercise.title) #{exercise.title}
 
         .form-group
           label(for="core", class="control-label col-sm-2 col-lg-offset-3") Core:
@@ -60,7 +60,7 @@ block content
             select(name="core", id=core, class="form-control")
               each exercise, e in exercises
                 - if (exercise.type === 'core')
-                  option(value=value="#{JSON.stringify(exercise)}") #{exercise.title}
+                  option(value=exercise.title) #{exercise.title}
 
         input(type="hidden", value="#{selectedGoal}", name="goal")
 

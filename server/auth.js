@@ -8,6 +8,7 @@ var auth = {
     if (!req.user) {
       res.redirect('/login');
     } else {
+      //console.log(req.user);
       next();
     }
   },

@@ -1,5 +1,6 @@
 var Exercise = require('./models/exercise');
 var Program = require('./models/program');
+var User = require('./models/user');
 
 var program = {
 
@@ -52,7 +53,7 @@ var program = {
       chest: req.body.chest,
       shoulders: req.body.shoulders,
       core: req.body.core,
-      goal: req.body.goal,
+      _user: req.session.user.email,
       sets: sets,
       reps: reps,
       rest: rest
@@ -66,6 +67,25 @@ var program = {
         next();
       }
     });
+  },
+
+  getCurrentUserPrograms : function (req, res, next) {
+    Program.find({ _user: req.session.user.email }, function (err, programs) {
+      if (err) {
+
+      } else {
+        console.log("Current user's programs: " + programs);
+        if (!programs.length) {
+          req.app.locals.hasPrograms = 'false';
+          next();
+        } else {
+          req.app.locals.hasPrograms = 'true';
+          req.app.locals.allprograms = programs;
+          res.render('programs', programs);
+          next();
+        }
+      }
+    })
   },
 
   createData : function (req, res) {

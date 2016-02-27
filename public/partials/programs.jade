@@ -2,8 +2,10 @@ extends layout
 
 block content
   .programs-wrapper
-    if (!user.programs)
+
+    if (hasPrograms === 'false')
       h4 You don't have any programs yet
       a(href="/create").btn.btn-default Create
     else
       h4 Programzzzz
+

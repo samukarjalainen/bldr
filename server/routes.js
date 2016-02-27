@@ -34,8 +34,8 @@ router.get('/profile', auth.authenticate, function (req, res) {
 
 router.post('/signup', auth.register);
 
-router.get('/programs', auth.authenticate, function (req, res) {
-  res.render('programs', { title: 'Programs' });
+router.get('/programs', auth.authenticate, program.getCurrentUserPrograms, function (req, res) {
+  res.render('programs', { title: 'Programs', hasPrograms: req.app.locals.hasPrograms });
 });
 
 router.get('/create', auth.authenticate, function (req, res) {
@@ -52,6 +52,10 @@ router.get('/create-2', auth.authenticate, program.getExercises,  function (req,
 
 router.post('/create-2', auth.authenticate, program.createProgram, function (req, res) {
   res.render('create-program-3');
+});
+
+router.get('/cur-user-programs', auth.authenticate, program.getCurrentUserPrograms, function (req, res) {
+  res.render('programs', { allprograms: req.app.locals.allprograms });
 });
 
 router.post('/create', auth.authenticate, program.selectGoal);
