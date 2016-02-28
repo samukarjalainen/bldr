@@ -6348,6 +6348,14 @@ html, body {
   font-weight: bold; }
 
 /* Mixins */
+.programs-wrapper .program-tables-wrapper {
+  width: 720px;
+  margin: 0 auto; }
+  .programs-wrapper .program-tables-wrapper .program-table-goal {
+    text-align: center; }
+  .programs-wrapper .program-tables-wrapper table {
+    margin: 0 auto 30px; }
+
 /* Specify colors */
 /* Placeholders */
 html, body {

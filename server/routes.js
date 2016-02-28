@@ -54,9 +54,12 @@ router.post('/create-2', auth.authenticate, program.createProgram, function (req
   res.render('create-program-3');
 });
 
-router.get('/cur-user-programs', auth.authenticate, program.getCurrentUserPrograms, function (req, res) {
-  res.render('programs', { allprograms: req.app.locals.allprograms });
+router.post('/programs/delete/:id', auth.authenticate, program.deleteProgram, function (req, res) {
 });
+
+//router.get('/cur-user-programs', auth.authenticate, program.getCurrentUserPrograms, function (req, res) {
+//  res.render('programs', { allprograms: req.app.locals.allprograms });
+//});
 
 router.post('/create', auth.authenticate, program.selectGoal);
 

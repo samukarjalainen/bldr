@@ -3,19 +3,39 @@ extends layout
 block content
   .program-table-wrapper.row
     h3 All done! Here's your program
-    p #{program}
 
     .program-table
-      table.table
-        thead
-          th Exercise
-          th Sets
-          th Reps
-          th Rest
-
-        tbody
-          //td #{program.legs}
-          //td #{program.sets}
-          //td #{program.reps}
-          //td #{program.rest}
+      h4.program-table-goal #{program.goal}
+        table.table
+          thead
+            th Exercise
+            th Sets
+            th Reps
+            th Rest
+          tbody
+            tr
+              td #{program.legs}
+              td #{program.sets}
+              td #{program.reps}
+              td #{program.rest}
+            tr
+              td #{program.back}
+              td #{program.sets}
+              td #{program.reps}
+              td #{program.rest}
+            tr
+              td #{program.chest}
+              td #{program.sets}
+              td #{program.reps}
+              td #{program.rest}
+            tr
+              td #{program.shoulders}
+              td #{program.sets}
+              td #{program.reps}
+              td #{program.rest}
+            tr
+              td #{program.core}
+              td #{program.sets}
+              td #{program.reps}
+              td #{program.rest}
 

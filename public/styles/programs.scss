@@ -3,4 +3,20 @@
 .programs-wrapper {
   .btn-default {
   }
+
+  .program-tables-wrapper {
+    width: 720px;
+    margin:0 auto;
+
+    .program-table-goal {
+      //display: inline-block;
+      //margin: 0 auto;
+      text-align: center;
+    }
+    table {
+      margin:0 auto 30px;
+    }
+  }
+
+
 }

@@ -54,6 +54,7 @@ var program = {
       shoulders: req.body.shoulders,
       core: req.body.core,
       _user: req.session.user.email,
+      goal: req.body.goal,
       sets: sets,
       reps: reps,
       rest: rest
@@ -74,18 +75,32 @@ var program = {
       if (err) {
 
       } else {
-        console.log("Current user's programs: " + programs);
+        //console.log("Current user's programs: " + programs);
         if (!programs.length) {
           req.app.locals.hasPrograms = 'false';
           next();
         } else {
           req.app.locals.hasPrograms = 'true';
           req.app.locals.allprograms = programs;
-          res.render('programs', programs);
+          res.render('programs', { title: 'Programs' }, programs);
           next();
         }
       }
     })
+  },
+
+  deleteProgram : function (req, res, next) {
+    //var progId = req.params.
+    console.log("deleteProgram called");
+
+    console.log("Id to delete: " + req.params.id);
+
+    Program.remove({ _id: req.params.id }, function (err, removed) {
+      if (err) {}
+
+    });
+
+    res.redirect('/programs');
   },
 
   createData : function (req, res) {
