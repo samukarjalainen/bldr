@@ -4,18 +4,37 @@
   .btn-default {
   }
 
+
+
   .program-tables-wrapper {
     width: 720px;
     margin:0 auto;
 
-    .program-table-goal {
-      //display: inline-block;
-      //margin: 0 auto;
-      text-align: center;
+    .current-programs {
+      margin-bottom: 30px;
     }
-    table {
-      margin:0 auto 30px;
+
+    .program-wrapper {
+      background-color: $bg-light;
+      padding: 15px;
+      margin-bottom: 45px;
+      .program-table-goal {
+        display: inline-block;
+        //margin: 0 auto;
+        text-align: left;
+        text-transform: capitalize;
+        font-weight: bold;
+      }
+
+      .btn-delete {
+        float: right;
+      }
+      table {
+        margin:0 auto 15px;
+      }
     }
+
+
   }
 
 

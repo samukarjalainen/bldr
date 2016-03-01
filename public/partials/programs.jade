@@ -16,11 +16,13 @@ block content
     else
       h3 Programs
 
-      .program-tables-wrapper
 
+      .program-tables-wrapper
+        h4.current-programs You currently have <span class="special-word">#{allprograms.length}</span> programs.
         - each program, i in allprograms
           .program-wrapper
             h4.program-table-goal #{program.goal}
+            button(type="submit").btn.btn-danger.btn-delete Delete
             table.table
               thead
                 th Exercise
@@ -55,8 +57,8 @@ block content
                   td #{program.rest}
 
             form(name="deleteProgram", method="POST", action="/programs/delete/#{program._id}", enctype="application/x-www-form-urlencoded")
-              button(type="submit").btn.btn-danger Delete
+
               //input(type="hidden", value=program._id)
-      h4 Create new program
-      a(href="/create").btn.btn-default Create
+        h4 Create new program
+        a(href="/create").btn.btn-default Create
 

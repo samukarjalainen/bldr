@@ -2,35 +2,35 @@ extends layout
 
 block content
   .register-wrapper
-    h4.register-headline Fill out the information and you're ready to start using Bldr.
+    h4.bldr-h4 Fill out the information and you're ready to start using Bldr.
 
-      form(name="signup", class="form-horizontal", method="POST", action="/signup", enctype="application/x-www-form-urlencoded")
+    form(name="signup", class="form-horizontal", method="POST", action="/signup", enctype="application/x-www-form-urlencoded")
 
-        .form-group
-          label(for="firstname", class="control-label col-sm-2 col-lg-offset-3") First name:
-          .col-sm-10.col-lg-3
-            input(name="firstname", type="text", id=firstname, class="form-control")
+      .form-group
+        label(for="firstname", class="control-label col-sm-2") First name:
+        .col-sm-10
+          input(name="firstname", type="text", id=firstname, class="form-control")
 
-        .form-group
-          label(for="lastname", class="control-label col-sm-2 col-lg-offset-3") Last name:
-          .col-sm-10.col-lg-3
-            input(name="lastname", type="text", id=lastname, class="form-control")
+      .form-group
+        label(for="lastname", class="control-label col-sm-2") Last name:
+        .col-sm-10
+          input(name="lastname", type="text", id=lastname, class="form-control")
 
-        .form-group
-          label(for="email", class="control-label col-sm-2 col-lg-offset-3") E-mail:
-          .col-sm-10.col-lg-3
-            input(name="email", type="email", id=email, class="form-control")
+      .form-group
+        label(for="email", class="control-label col-sm-2") E-mail:
+        .col-sm-10
+          input(name="email", type="email", id=email, class="form-control")
 
-        .form-group
-          label(for="password", class="control-label col-sm-2 col-lg-offset-3") Password:
-          .col-sm-10.col-lg-3
-            input(name="password", type="password", id=password, class="form-control")
+      .form-group
+        label(for="password", class="control-label col-sm-2") Password:
+        .col-sm-10
+          input(name="password", type="password", id=password, class="form-control")
 
-        .form-group
-          label(for="pwconfirm", class="control-label col-sm-2 col-lg-offset-3") Confirm password:
-          .col-sm-10.col-lg-3
-            input(name="pwconfirm", type="password", id=pwconfirm, class="form-control")
+      .form-group
+        label(for="pwconfirm", class="control-label col-sm-2") Confirm password:
+        .col-sm-10
+          input(name="pwconfirm", type="password", id=pwconfirm, class="form-control")
 
-        .form-group
-          .col-lg-offset-5.col-sm-10.col-lg-1
-            button(type="submit", class="btn btn-default") Register
+      .form-group
+        .col-sm-offset-2.col-sm-10
+          button(type="submit", class="btn btn-default") Register

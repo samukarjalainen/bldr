@@ -15,9 +15,6 @@
 @import url(../bower_components/OwlCarousel/owl-carousel/owl.carousel.css);
 @import url(https://fonts.googleapis.com/css?family=Ubuntu:400,400italic);
 @import url(https://fonts.googleapis.com/css?family=Ubuntu:400,400italic);
-@import url(https://fonts.googleapis.com/css?family=Ubuntu:400,400italic);
-@import url(https://fonts.googleapis.com/css?family=Ubuntu:400,400italic);
-@import url(https://fonts.googleapis.com/css?family=Ubuntu:400,400italic);
 @import url(../bower_components/bootstrap-select/dist/css/bootstrap-select.min.css);
 html {
   font-family: sans-serif;
@@ -5899,12 +5896,30 @@ a {
   a:visited {
     color: #ff6600; }
 
+.bldr-h4 {
+  margin: 30px auto 60px;
+  text-align: center; }
+
+form.form-horizontal {
+  max-width: 620px;
+  padding: 40px 80px;
+  background-color: #f2f2f2;
+  margin: 30px auto 60px; }
+  form.form-horizontal .btn-default {
+    background-color: #ff6600;
+    color: #FFF;
+    opacity: 0.8; }
+    form.form-horizontal .btn-default:hover {
+      opacity: 1; }
+
 .content-wrapper {
   min-height: 100%;
   position: relative; }
   .content-wrapper .view-wrapper {
     padding-bottom: 130px;
     /* Height of the footer element */ }
+    .content-wrapper .view-wrapper .special-word {
+      color: #ff6600; }
     .content-wrapper .view-wrapper .btn-default {
       background-color: #ff6600;
       color: #FFF;
@@ -6244,117 +6259,24 @@ html, body {
   font-weight: bold; }
 
 /* Mixins */
-.contact .contact-message {
-  margin: 0 auto 60px;
-  text-align: center; }
-
-.contact form.form-horizontal {
-  max-width: 520px;
-  margin: 30px auto 60px; }
-  .contact form.form-horizontal .btn-default {
-    background-color: #ff6600;
-    color: #FFF;
-    opacity: 0.8; }
-    .contact form.form-horizontal .btn-default:hover {
-      opacity: 1; }
-
-/* Specify colors */
-/* Placeholders */
-html, body {
-  font-family: 'Ubuntu', sans-serif;
-  font-size: 16px;
-  font-weight: 400; }
-
-.navbar .navbar-header .navbar-brand {
-  font-size: 32px;
-  color: #333; }
-
-.navbar-default .navbar-nav {
-  font-size: 18px;
-  color: #555; }
-
-#footer {
-  font-size: 14px; }
-
-.start-now-wrapper .text-button {
-  font-size: 18px;
-  text-decoration: none;
-  font-weight: bold; }
-
-/* Mixins */
-.register-wrapper .register-headline {
-  margin: 0 auto 60px;
-  text-align: center; }
-
-.register-wrapper form.form-horizontal {
-  margin: 30px auto 60px; }
-  .register-wrapper form.form-horizontal .form-group label {
-    display: inline-block; }
-
-/* Specify colors */
-/* Placeholders */
-html, body {
-  font-family: 'Ubuntu', sans-serif;
-  font-size: 16px;
-  font-weight: 400; }
-
-.navbar .navbar-header .navbar-brand {
-  font-size: 32px;
-  color: #333; }
-
-.navbar-default .navbar-nav {
-  font-size: 18px;
-  color: #555; }
-
-#footer {
-  font-size: 14px; }
-
-.start-now-wrapper .text-button {
-  font-size: 18px;
-  text-decoration: none;
-  font-weight: bold; }
-
-/* Mixins */
-.login-wrapper .error {
-  text-align: center;
-  margin: 60px auto 60px; }
-
-.login-wrapper form.form-horizontal {
-  margin: 60px auto 120px; }
-  .login-wrapper form.form-horizontal .form-group label {
-    display: inline-block; }
-
-/* Specify colors */
-/* Placeholders */
-html, body {
-  font-family: 'Ubuntu', sans-serif;
-  font-size: 16px;
-  font-weight: 400; }
-
-.navbar .navbar-header .navbar-brand {
-  font-size: 32px;
-  color: #333; }
-
-.navbar-default .navbar-nav {
-  font-size: 18px;
-  color: #555; }
-
-#footer {
-  font-size: 14px; }
-
-.start-now-wrapper .text-button {
-  font-size: 18px;
-  text-decoration: none;
-  font-weight: bold; }
-
-/* Mixins */
 .programs-wrapper .program-tables-wrapper {
   width: 720px;
   margin: 0 auto; }
-  .programs-wrapper .program-tables-wrapper .program-table-goal {
-    text-align: center; }
-  .programs-wrapper .program-tables-wrapper table {
-    margin: 0 auto 30px; }
+  .programs-wrapper .program-tables-wrapper .current-programs {
+    margin-bottom: 30px; }
+  .programs-wrapper .program-tables-wrapper .program-wrapper {
+    background-color: #f2f2f2;
+    padding: 15px;
+    margin-bottom: 45px; }
+    .programs-wrapper .program-tables-wrapper .program-wrapper .program-table-goal {
+      display: inline-block;
+      text-align: left;
+      text-transform: capitalize;
+      font-weight: bold; }
+    .programs-wrapper .program-tables-wrapper .program-wrapper .btn-delete {
+      float: right; }
+    .programs-wrapper .program-tables-wrapper .program-wrapper table {
+      margin: 0 auto 15px; }
 
 /* Specify colors */
 /* Placeholders */
@@ -6384,8 +6306,6 @@ html, body {
   text-align: center;
   margin-bottom: 120px;
   /* Styles for Movements-section */ }
-  .create-program-wrapper .special-word {
-    color: #ff6600; }
   .create-program-wrapper .goal-wrapper {
     margin-bottom: 30px; }
     .create-program-wrapper .goal-wrapper .goal-type {

@@ -8,10 +8,6 @@ router.get('/', function(req, res) {
   res.render('index', { title: 'Home' });
 });
 
-router.get('/about', function (req, res) {
-  res.render('about', { title: 'About' });
-});
-
 router.get('/contact', function (req, res) {
   res.render('contact', { title: 'Contact' });
 });
@@ -56,10 +52,6 @@ router.post('/create-2', auth.authenticate, program.createProgram, function (req
 
 router.post('/programs/delete/:id', auth.authenticate, program.deleteProgram, function (req, res) {
 });
-
-//router.get('/cur-user-programs', auth.authenticate, program.getCurrentUserPrograms, function (req, res) {
-//  res.render('programs', { allprograms: req.app.locals.allprograms });
-//});
 
 router.post('/create', auth.authenticate, program.selectGoal);
 

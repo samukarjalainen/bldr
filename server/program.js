@@ -82,7 +82,7 @@ var program = {
         } else {
           req.app.locals.hasPrograms = 'true';
           req.app.locals.allprograms = programs;
-          res.render('programs', { title: 'Programs' }, programs);
+          //res.render('programs', { title: 'Programs' }, programs);
           next();
         }
       }
