@@ -1,8 +1,7 @@
 @import "variables";
 
 .programs-wrapper {
-  .btn-default {
-  }
+
 
 
 
@@ -12,6 +11,12 @@
 
     .current-programs {
       margin-bottom: 30px;
+      display: inline-block;
+    }
+    .btn-default {
+      display: inline-block;
+      float: right;
+      margin-right: 15px;
     }
 
     .program-wrapper {

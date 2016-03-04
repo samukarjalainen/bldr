@@ -6263,7 +6263,12 @@ html, body {
   width: 720px;
   margin: 0 auto; }
   .programs-wrapper .program-tables-wrapper .current-programs {
-    margin-bottom: 30px; }
+    margin-bottom: 30px;
+    display: inline-block; }
+  .programs-wrapper .program-tables-wrapper .btn-default {
+    display: inline-block;
+    float: right;
+    margin-right: 15px; }
   .programs-wrapper .program-tables-wrapper .program-wrapper {
     background-color: #f2f2f2;
     padding: 15px;
@@ -6305,7 +6310,7 @@ html, body {
 .create-program-wrapper {
   text-align: center;
   margin-bottom: 120px;
-  /* Styles for Movements-section */ }
+  /* Styles for Exercises-section */ }
   .create-program-wrapper .goal-wrapper {
     margin-bottom: 30px; }
     .create-program-wrapper .goal-wrapper .goal-type {
@@ -6341,11 +6346,5 @@ html, body {
     display: inline-block; }
   .create-program-wrapper .make-selection-button-wrapper {
     margin-top: 30px; }
-  .create-program-wrapper .exercises-wrapper .btn-default {
-    background-color: #fff;
-    color: #333; }
-  .create-program-wrapper .exercises-wrapper .exercise {
-    display: block;
-    margin-bottom: 15px; }
-    .create-program-wrapper .exercises-wrapper .exercise p {
-      display: inline-block; }
+  .create-program-wrapper .exercises-wrapper .btn-create {
+    text-align: left; }
