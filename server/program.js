@@ -45,6 +45,9 @@ var program = {
       sets = "3-5";
       reps = "8-15";
       rest = "60s";
+    } else {
+      res.status(400);
+      res.json({ error: "Bad request. Program goal not found." });
     }
 
     var program = new Program({

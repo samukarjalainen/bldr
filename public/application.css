@@ -15,6 +15,7 @@
 @import url(../bower_components/OwlCarousel/owl-carousel/owl.carousel.css);
 @import url(https://fonts.googleapis.com/css?family=Ubuntu:400,400italic);
 @import url(https://fonts.googleapis.com/css?family=Ubuntu:400,400italic);
+@import url(https://fonts.googleapis.com/css?family=Ubuntu:400,400italic);
 @import url(../bower_components/bootstrap-select/dist/css/bootstrap-select.min.css);
 html {
   font-family: sans-serif;
@@ -6348,3 +6349,44 @@ html, body {
     margin-top: 30px; }
   .create-program-wrapper .exercises-wrapper .btn-create {
     text-align: left; }
+
+/* Specify colors */
+/* Placeholders */
+html, body {
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 16px;
+  font-weight: 400; }
+
+.navbar .navbar-header .navbar-brand {
+  font-size: 32px;
+  color: #333; }
+
+.navbar-default .navbar-nav {
+  font-size: 18px;
+  color: #555; }
+
+#footer {
+  font-size: 14px; }
+
+.start-now-wrapper .text-button {
+  font-size: 18px;
+  text-decoration: none;
+  font-weight: bold; }
+
+/* Mixins */
+.contact-wrapper .social-media {
+  text-align: center;
+  margin-bottom: 90px; }
+  .contact-wrapper .social-media .social-icon {
+    display: inline-block;
+    margin-right: 45px; }
+    .contact-wrapper .social-media .social-icon .social-svg {
+      -webkit-transition: ease-in-out 0.1s;
+      -moz-transition: ease-in-out 0.1s;
+      -o-transition: ease-in-out 0.1s;
+      -ms-transition: ease-in-out 0.1s;
+      transition: ease-in-out 0.1s; }
+      .contact-wrapper .social-media .social-icon .social-svg:hover {
+        fill: #ff6600; }
+    .contact-wrapper .social-media .social-icon:last-of-type {
+      margin-right: 0; }
