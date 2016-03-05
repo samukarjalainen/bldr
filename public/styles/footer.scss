@@ -13,7 +13,65 @@
     margin: 0;
   }
 
-  .copyright-info {
+  .footer-heading {
+    margin-bottom: 10px;
+  }
+
+  .footer-section {
+    padding: 0;
+  }
+
+  .footer-text {
+    margin-top: 20px;
+    margin-bottom: 30px;
+  }
+
+  .footer-nav {
+    position: relative;
+    text-align: center;
+
+    .footer-navbar {
+      margin-top: 50px;
+      padding: 0;
+      li {
+        display: inline-block;
+        margin-right: 10px;
+        padding-right: 13px;
+        border-right: solid 1px #b3b3b3;
+
+        &:last-of-type {
+          border-right: none;
+        }
+
+        a {
+          color: #707070;
+
+          &:hover {
+            color: $accent-color;
+          }
+        }
+      }
+    }
+  }
+
+  .footer-social-media {
+    text-align: right;
     margin-top: 40px;
+
+    .social-icon {
+      display: inline-block;
+      margin-right: 30px;
+
+      .social-svg {
+        @include transition(ease-in-out 0.1s);
+        &:hover {
+          fill: $accent-color;
+        }
+      }
+
+      &:last-of-type {
+        margin-right: 0;
+      }
+    }
   }
 }
