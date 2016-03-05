@@ -3,9 +3,48 @@ extends layout
 block content
   .profile-wrapper
 
-    h3 Hello #{user.firstName}!
+    h3 Hello <span class="special-word">#{user.firstName}</span>!
 
-    .user-info
-      p First name: #{user.firstName}
-      p Last name: #{user.lastName}
-      p E-mail: #{user.email}
+    .col-sm-6.col-xs-12.profile-column
+      p Your personal information is below. You can change it by inputting new information and hitting submit.
+      form(name="personalInfo", class="form-horizontal", method="POST", action="/user/update-info", enctype="application/x-www-form-urlencoded")
+        .form-group
+          label(for="firstname", class="control-label col-sm-4") First name:
+          .col-sm-7
+            input(name="firstname", type="text", id=firstname, class="form-control" value="#{user.firstName}")
+
+        .form-group
+          label(for="lastname", class="control-label col-sm-4") Last name:
+          .col-sm-7
+            input(name="lastname", type="text", id=lastname, class="form-control" value="#{user.lastName}")
+
+        .form-group
+          label(for="email", class="control-label col-sm-4") E-mail:
+          .col-sm-7
+            input(name="email", type="email", id=email, class="form-control" value="#{user.email}")
+
+        .form-group
+          .col-sm-offset-4.col-sm-9
+            button(type="submit", class="btn btn-default") Submit
+
+    .col-sm-6.col-xs-12.profile-column
+      p Here you can change your password. To do so, input your current password and a new password with confirmation.
+      form(name="changePassword", class="form-horizontal", method="POST", action="/user/change-password", enctype="application/x-www-form-urlencoded")
+        .form-group
+          label(for="curPassword", class="control-label col-sm-4") Current password:
+          .col-sm-7
+            input(name="oldPassword", type="password", id=curPassword, class="form-control")
+
+        .form-group
+          label(for="newPassword", class="control-label col-sm-4") New password:
+          .col-sm-7
+            input(name="newPassword", type="password", id=newPassword, class="form-control")
+
+        .form-group
+          label(for="pwconfirm", class="control-label col-sm-4") Confirm PW:
+          .col-sm-7
+            input(name="pwconfirm", type="password", id=pwconfirm, class="form-control")
+
+        .form-group
+          .col-sm-offset-4.col-sm-7
+            button(type="submit", class="btn btn-default") Submit

@@ -16,6 +16,7 @@
 @import url(https://fonts.googleapis.com/css?family=Ubuntu:400,400italic);
 @import url(https://fonts.googleapis.com/css?family=Ubuntu:400,400italic);
 @import url(https://fonts.googleapis.com/css?family=Ubuntu:400,400italic);
+@import url(https://fonts.googleapis.com/css?family=Ubuntu:400,400italic);
 @import url(../bower_components/bootstrap-select/dist/css/bootstrap-select.min.css);
 html {
   font-family: sans-serif;
@@ -6428,3 +6429,30 @@ html, body {
         fill: #ff6600; }
     .contact-wrapper .social-media .social-icon:last-of-type {
       margin-right: 0; }
+
+/* Specify colors */
+/* Placeholders */
+html, body {
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 16px;
+  font-weight: 400; }
+
+.navbar .navbar-header .navbar-brand {
+  font-size: 32px;
+  color: #333; }
+
+.navbar-default .navbar-nav {
+  font-size: 18px;
+  color: #555; }
+
+#footer {
+  font-size: 14px; }
+
+.start-now-wrapper .text-button {
+  font-size: 18px;
+  text-decoration: none;
+  font-weight: bold; }
+
+/* Mixins */
+.profile-wrapper .profile-column form.form-horizontal {
+  padding: 35px 20px 20px; }
