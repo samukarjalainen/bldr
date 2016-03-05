@@ -5,8 +5,11 @@ block content
 
     h3 Hello <span class="special-word">#{user.firstName}</span>!
 
+
+
     .col-sm-6.col-xs-12.profile-column
       p Your personal information is below. You can change it by inputting new information and hitting submit.
+
       form(name="personalInfo", class="form-horizontal", method="POST", action="/user/update-info", enctype="application/x-www-form-urlencoded")
         .form-group
           label(for="firstname", class="control-label col-sm-4") First name:
@@ -26,6 +29,12 @@ block content
         .form-group
           .col-sm-offset-4.col-sm-9
             button(type="submit", class="btn btn-default") Submit
+
+      if (emailError)
+        span(class="alert alert-danger") #{emailError}
+
+      if (updateInfoSuccess)
+        span(class="alert alert-success") #{updateInfoSuccess}
 
     .col-sm-6.col-xs-12.profile-column
       p Here you can change your password. To do so, input your current password and a new password with confirmation.
@@ -48,3 +57,6 @@ block content
         .form-group
           .col-sm-offset-4.col-sm-7
             button(type="submit", class="btn btn-default") Submit
+
+      if (passwordError)
+        span(class="alert alert-danger") #{error}

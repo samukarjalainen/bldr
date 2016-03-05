@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 var auth = require('./auth.js');
 var program = require('./program.js');
+var user = require('./user.js');
 
 
 /* -- PAGES -- */
@@ -27,7 +28,11 @@ router.get('/login', function (req, res) {
 
 /* -- Profile Page -- */
 router.get('/profile', auth.authenticate, function (req, res) {
-  res.render('profile', { title: 'Profile'});
+  res.render('profile', { title: 'Profile' });
+  req.app.locals.emailError = "";
+  req.app.locals.passwordError = "";
+  req.app.locals.updateInfoSuccess = "";
+  req.app.locals.pwChangeSuccess = "";
 });
 
 /* -- Programs Page -- */
@@ -61,7 +66,6 @@ router.get('/create-3', auth.authenticate, function (req, res) {
   } else {
     res.render('create-program-3', { title: 'Programs' });
   }
-
 });
 
 
@@ -77,8 +81,10 @@ router.post('/programs/create', auth.authenticate, program.selectGoal);
 router.get('/programs/create-exercises', program.createData);
 
 /* -- User routes -- */
-router.post('/user/update-info', auth.authenticate);
-router.post('/user/change-password', auth.authenticate);
+router.post('/user/update-info', auth.authenticate, user.updateInformation, function (req, res) {
+  res.redirect('/profile');
+});
+router.post('/user/change-password', auth.authenticate, user.changePassword);
 
 
 module.exports = router;
