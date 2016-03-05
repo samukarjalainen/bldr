@@ -1,6 +1,6 @@
 var Exercise = require('./models/exercise');
 var Program = require('./models/program');
-var User = require('./models/user');
+//var User = require('./models/user');
 
 var program = {
 

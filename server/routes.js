@@ -52,7 +52,16 @@ router.get('/create-2', auth.authenticate, program.getExercises,  function (req,
 
 /* -- 3rd Phase -- */
 router.post('/create-2', auth.authenticate, program.createProgram, function (req, res) {
-  res.render('create-program-3', { title: 'Programs' });
+  res.redirect('/create-3');
+});
+
+router.get('/create-3', auth.authenticate, function (req, res) {
+  if (!req.app.locals.program) {
+    res.redirect('/create');
+  } else {
+    res.render('create-program-3', { title: 'Programs' });
+  }
+
 });
 
 
