@@ -1,41 +1,43 @@
 extends layout
 
 block content
-  .program-table-wrapper.row
+  .program-table-wrapper
     h3 All done! Here's your program
 
     .program-table
       h4.program-table-goal #{program.goal}
-        table.table
-          thead
-            th Exercise
-            th Sets
-            th Reps
-            th Rest
-          tbody
-            tr
-              td #{program.legs}
-              td #{program.sets}
-              td #{program.reps}
-              td #{program.rest}
-            tr
-              td #{program.back}
-              td #{program.sets}
-              td #{program.reps}
-              td #{program.rest}
-            tr
-              td #{program.chest}
-              td #{program.sets}
-              td #{program.reps}
-              td #{program.rest}
-            tr
-              td #{program.shoulders}
-              td #{program.sets}
-              td #{program.reps}
-              td #{program.rest}
-            tr
-              td #{program.core}
-              td #{program.sets}
-              td #{program.reps}
-              td #{program.rest}
+      table.table
+        thead
+          th Exercise
+          th Sets
+          th Reps
+          th Rest
+        tbody
+          tr
+            td #{program.legs}
+            td #{program.sets}
+            td #{program.reps}
+            td #{program.rest}
+          tr
+            td #{program.back}
+            td #{program.sets}
+            td #{program.reps}
+            td #{program.rest}
+          tr
+            td #{program.chest}
+            td #{program.sets}
+            td #{program.reps}
+            td #{program.rest}
+          tr
+            td #{program.shoulders}
+            td #{program.sets}
+            td #{program.reps}
+            td #{program.rest}
+          tr
+            td #{program.core}
+            td #{program.sets}
+            td #{program.reps}
+            td #{program.rest}
 
+    p View all your <span class="special-word"><a href="/programs">programs</a></span>
+    p Go to your <span class="special-word"><a href="/profile">profile</a></span>

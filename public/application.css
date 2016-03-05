@@ -6389,6 +6389,24 @@ html, body {
   .create-program-wrapper .exercises-wrapper .btn-create {
     text-align: left; }
 
+.program-table-wrapper {
+  max-width: 720px;
+  margin: 0 auto 90px; }
+  .program-table-wrapper .program-table {
+    width: 720px;
+    margin: 0 auto 30px;
+    background-color: #f2f2f2;
+    padding: 15px; }
+    .program-table-wrapper .program-table .program-table-goal {
+      display: inline-block;
+      text-align: left;
+      text-transform: capitalize;
+      font-weight: bold; }
+    .program-table-wrapper .program-table .btn-delete {
+      float: right; }
+    .program-table-wrapper .program-table table {
+      margin: 0 auto 15px; }
+
 /* Specify colors */
 /* Placeholders */
 html, body {

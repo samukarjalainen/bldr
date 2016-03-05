@@ -4,40 +4,44 @@ var auth = require('./auth.js');
 var program = require('./program.js');
 
 
+/* -- PAGES -- */
+/* -- Home page -- */
 router.get('/', function(req, res) {
   res.render('index', { title: 'Home' });
 });
 
+/* -- Contact page -- */
 router.get('/contact', function (req, res) {
   res.render('contact', { title: 'Contact' });
 });
 
-router.get('/login', function (req, res) {
-  res.render('login', { title: 'Login' });
-});
-
-router.post('/login', auth.login);
-
-router.get('/logout', auth.logout);
-
+/* -- Register page -- */
 router.get('/register', function (req, res) {
   res.render('register', { title: 'Register' });
 });
 
+/* -- Login Page-- */
+router.get('/login', function (req, res) {
+  res.render('login', { title: 'Login' });
+});
+
+/* -- Profile Page -- */
 router.get('/profile', auth.authenticate, function (req, res) {
   res.render('profile', { title: 'Profile'});
 });
 
-router.post('/signup', auth.register);
-
+/* -- Programs Page -- */
 router.get('/programs', auth.authenticate, program.getCurrentUserPrograms, function (req, res) {
   res.render('programs', { title: 'Programs', hasPrograms: req.app.locals.hasPrograms });
 });
 
+/* -- Create Program Pages -- */
+/* -- 1st Phase -- */
 router.get('/create', auth.authenticate, function (req, res) {
   res.render('create-program-1', { title: 'Programs' });
 });
 
+/* -- 2nd Phase -- */
 router.get('/create-2', auth.authenticate, program.getExercises,  function (req, res) {
   if (!req.app.locals.selection) {
     res.redirect('/create');
@@ -46,15 +50,26 @@ router.get('/create-2', auth.authenticate, program.getExercises,  function (req,
   }
 });
 
+/* -- 3rd Phase -- */
 router.post('/create-2', auth.authenticate, program.createProgram, function (req, res) {
-  res.render('create-program-3');
+  res.render('create-program-3', { title: 'Programs' });
 });
 
-router.post('/programs/delete/:id', auth.authenticate, program.deleteProgram, function (req, res) {
-});
 
-router.post('/create', auth.authenticate, program.selectGoal);
+/* -- API ROUTES -- */
+/* -- Authentication routes -- */
+router.post('/login', auth.login);
+router.post('/signup', auth.register);
+router.get('/logout', auth.logout);
 
-router.get('/create-exercises', program.createData);
+/* -- Program routes -- */
+router.post('/programs/delete/:id', auth.authenticate, program.deleteProgram);
+router.post('/programs/create', auth.authenticate, program.selectGoal);
+router.get('/programs/create-exercises', program.createData);
+
+/* -- User routes -- */
+router.post('/user/update-info', auth.authenticate);
+router.post('/user/change-password', auth.authenticate);
+
 
 module.exports = router;

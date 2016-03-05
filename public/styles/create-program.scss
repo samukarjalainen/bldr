@@ -68,4 +68,34 @@
       text-align: left;
     }
   }
+
+
 }
+
+.program-table-wrapper {
+  max-width: 720px;
+  margin: 0 auto 90px;
+
+  .program-table {
+    width: 720px;
+    margin: 0 auto 30px;
+    background-color: $bg-light;
+    padding: 15px;
+
+    .program-table-goal {
+      display: inline-block;
+      text-align: left;
+      text-transform: capitalize;
+      font-weight: bold;
+    }
+
+    .btn-delete {
+      float: right;
+    }
+    table {
+      margin:0 auto 15px;
+    }
+
+  }
+}
+
