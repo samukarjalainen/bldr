@@ -6475,5 +6475,11 @@ html, body {
   font-weight: bold; }
 
 /* Mixins */
-.profile-wrapper .profile-column form.form-horizontal {
-  padding: 35px 20px 20px; }
+.profile-wrapper {
+  margin-bottom: 60px; }
+  .profile-wrapper .profile-column form.form-horizontal {
+    padding: 35px 20px 20px; }
+  .profile-wrapper .message-area {
+    text-align: center; }
+    .profile-wrapper .message-area span {
+      border-radius: 0; }

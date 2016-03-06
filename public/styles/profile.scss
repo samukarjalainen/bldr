@@ -1,9 +1,20 @@
 @import "variables";
 
 .profile-wrapper {
+  margin-bottom: 60px;
   .profile-column {
     form.form-horizontal {
       padding:35px 20px 20px;
     }
   }
+
+  .message-area {
+    text-align: center;
+
+    span {
+      border-radius: 0;
+    }
+  }
+
+
 }

@@ -1,14 +1,14 @@
 extends layout
 
 block content
-  .profile-wrapper
+  .profile-wrapper.clearfix
 
     h3 Hello <span class="special-word">#{user.firstName}</span>!
 
 
 
-    .col-sm-6.col-xs-12.profile-column
-      p Your personal information is below. You can change it by inputting new information and hitting submit.
+    .col-sm-12
+      p Here is your account information. You can update it by changing the values and hitting submit. Password is changed by inputting the new password on both 'new password' and 'confirm pw' fields.
 
       form(name="personalInfo", class="form-horizontal", method="POST", action="/user/update-info", enctype="application/x-www-form-urlencoded")
         .form-group
@@ -27,27 +27,9 @@ block content
             input(name="email", type="email", id=email, class="form-control" value="#{user.email}")
 
         .form-group
-          .col-sm-offset-4.col-sm-9
-            button(type="submit", class="btn btn-default") Submit
-
-      if (emailError)
-        span(class="alert alert-danger") #{emailError}
-
-      if (updateInfoSuccess)
-        span(class="alert alert-success") #{updateInfoSuccess}
-
-    .col-sm-6.col-xs-12.profile-column
-      p Here you can change your password. To do so, input your current password and a new password with confirmation.
-      form(name="changePassword", class="form-horizontal", method="POST", action="/user/change-password", enctype="application/x-www-form-urlencoded")
-        .form-group
-          label(for="curPassword", class="control-label col-sm-4") Current password:
+          label(for="newpassword", class="control-label col-sm-4") New password:
           .col-sm-7
-            input(name="oldPassword", type="password", id=curPassword, class="form-control")
-
-        .form-group
-          label(for="newPassword", class="control-label col-sm-4") New password:
-          .col-sm-7
-            input(name="newPassword", type="password", id=newPassword, class="form-control")
+            input(name="newpassword", type="password", id=newpassword, class="form-control")
 
         .form-group
           label(for="pwconfirm", class="control-label col-sm-4") Confirm PW:
@@ -55,8 +37,19 @@ block content
             input(name="pwconfirm", type="password", id=pwconfirm, class="form-control")
 
         .form-group
-          .col-sm-offset-4.col-sm-7
+          .col-sm-offset-4.col-sm-9
             button(type="submit", class="btn btn-default") Submit
 
-      if (passwordError)
-        span(class="alert alert-danger") #{error}
+      .message-area
+        if (emailError)
+          span(class="alert alert-danger") #{emailError}
+
+        if (passwordError)
+          span(class="alert alert-danger") #{passwordError}
+
+        if (updateInfoSuccess)
+          span(class="alert alert-success") #{updateInfoSuccess}
+
+
+
+

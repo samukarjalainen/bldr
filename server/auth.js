@@ -8,7 +8,6 @@ var auth = {
     if (!req.user) {
       res.redirect('/login');
     } else {
-      //console.log(req.user);
       next();
     }
   },
@@ -19,7 +18,7 @@ var auth = {
         res.render('login', { title: 'Bldr | login', error: 'Invalid email or password.' });
       } else {
         if (bcrypt.compareSync(req.body.password, user.password)) {
-          req.session.user = user;
+          setSession(req, user);
           res.redirect('/profile');
         } else {
           res.render('login', { title: 'Bldr | login', error: 'Invalid email or password.' });
@@ -42,6 +41,7 @@ var auth = {
       email: req.body.email || 'email@email.com',
       password: hash
     });
+
     user.save(function (err) {
       if (err) {
         var err = "Something went wrong";
@@ -50,15 +50,19 @@ var auth = {
         }
         res.render('register', { error: error });
       } else {
-        var userWithoutPassword = user;
-        delete userWithoutPassword.password;
-        req.app.locals.user = userWithoutPassword;
-        req.session.user = userWithoutPassword;
+        setSession(req, user);
         res.redirect('/profile');
       }
     })
   }
 };
+
+function setSession(req, user) {
+  var userWithoutPassword = user;
+  delete userWithoutPassword.password;
+  req.app.locals.user = userWithoutPassword;
+  req.session.user = userWithoutPassword;
+}
 
 module.exports = auth;
 

@@ -32,7 +32,6 @@ router.get('/profile', auth.authenticate, function (req, res) {
   req.app.locals.emailError = "";
   req.app.locals.passwordError = "";
   req.app.locals.updateInfoSuccess = "";
-  req.app.locals.pwChangeSuccess = "";
 });
 
 /* -- Programs Page -- */
@@ -84,7 +83,6 @@ router.get('/programs/create-exercises', program.createData);
 router.post('/user/update-info', auth.authenticate, user.updateInformation, function (req, res) {
   res.redirect('/profile');
 });
-router.post('/user/change-password', auth.authenticate, user.changePassword);
 
 
 module.exports = router;
