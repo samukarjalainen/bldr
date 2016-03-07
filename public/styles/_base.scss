@@ -49,6 +49,13 @@ form.form-horizontal {
   }
 }
 
+.form-control {
+  @include border-radius(0);
+}
+
+.btn {
+  @include border-radius(0);
+}
 
 
 .content-wrapper {

@@ -5832,6 +5832,7 @@ button.close {
 
 /* Import custom styles */
 /* Specify colors */
+/* Media queries */
 /* Placeholders */
 html, body {
   font-family: 'Ubuntu', sans-serif;
@@ -5856,6 +5857,7 @@ html, body {
 
 /* Mixins */
 /* Specify colors */
+/* Media queries */
 /* Placeholders */
 html, body {
   font-family: 'Ubuntu', sans-serif;
@@ -5914,6 +5916,18 @@ form.form-horizontal {
     form.form-horizontal .btn-default:hover {
       opacity: 1; }
 
+.form-control {
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  -ms-border-radius: 0;
+  border-radius: 0; }
+
+.btn {
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  -ms-border-radius: 0;
+  border-radius: 0; }
+
 .content-wrapper {
   min-height: 100%;
   position: relative; }
@@ -5930,6 +5944,7 @@ form.form-horizontal {
         opacity: 1; }
 
 /* Specify colors */
+/* Media queries */
 /* Placeholders */
 html, body {
   font-family: 'Ubuntu', sans-serif;
@@ -5983,6 +5998,7 @@ html, body {
     background-color: red; }
 
 /* Specify colors */
+/* Media queries */
 /* Placeholders */
 html, body {
   font-family: 'Ubuntu', sans-serif;
@@ -6009,7 +6025,6 @@ html, body {
 #footer {
   height: 130px;
   border-top: 1px solid #777;
-  width: 1140px;
   position: absolute;
   bottom: 0; }
   #footer p {
@@ -6055,7 +6070,12 @@ html, body {
       #footer .footer-social-media .social-icon:last-of-type {
         margin-right: 0; }
 
+@media only screen and (max-width: 768px) {
+  #footer .footer-nav .footer-navbar {
+    margin-top: 20px; } }
+
 /* Specify colors */
+/* Media queries */
 /* Placeholders */
 html, body {
   font-family: 'Ubuntu', sans-serif;
@@ -6126,6 +6146,7 @@ html, body {
   margin-bottom: 60px; }
 
 /* Specify colors */
+/* Media queries */
 /* Placeholders */
 html, body {
   font-family: 'Ubuntu', sans-serif;
@@ -6276,6 +6297,7 @@ html, body {
     max-width: 370px; } }
 
 /* Specify colors */
+/* Media queries */
 /* Placeholders */
 html, body {
   font-family: 'Ubuntu', sans-serif;
@@ -6327,6 +6349,7 @@ html, body {
   margin-bottom: 90px; }
 
 /* Specify colors */
+/* Media queries */
 /* Placeholders */
 html, body {
   font-family: 'Ubuntu', sans-serif;
@@ -6367,15 +6390,21 @@ html, body {
       .create-program-wrapper .goal-wrapper .goal-type:hover .goal-image-wrapper .strength-image, .create-program-wrapper .goal-wrapper .goal-type:hover .goal-image-wrapper .scale-image {
         height: 160px; }
       .create-program-wrapper .goal-wrapper .goal-type.selected {
-        -webkit-border-radius: 4px;
-        -moz-border-radius: 4px;
-        -ms-border-radius: 4px;
-        border-radius: 4px;
+        -webkit-border-radius: 0;
+        -moz-border-radius: 0;
+        -ms-border-radius: 0;
+        border-radius: 0;
         border: 10px solid rgba(255, 102, 0, 0.7); }
       .create-program-wrapper .goal-wrapper .goal-type .goal-image-wrapper {
         height: 170px;
         position: relative; }
         .create-program-wrapper .goal-wrapper .goal-type .goal-image-wrapper .goal-image {
+          -webkit-transition: ease-in-out 0.2s;
+          -moz-transition: ease-in-out 0.2s;
+          -o-transition: ease-in-out 0.2s;
+          -ms-transition: ease-in-out 0.2s;
+          transition: ease-in-out 0.2s;
+          top: 0;
           height: 170px;
           margin: 0 auto;
           overflow: hidden;
@@ -6411,6 +6440,7 @@ html, body {
       margin: 0 auto 15px; }
 
 /* Specify colors */
+/* Media queries */
 /* Placeholders */
 html, body {
   font-family: 'Ubuntu', sans-serif;
@@ -6452,6 +6482,7 @@ html, body {
       margin-right: 0; }
 
 /* Specify colors */
+/* Media queries */
 /* Placeholders */
 html, body {
   font-family: 'Ubuntu', sans-serif;

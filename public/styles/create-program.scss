@@ -15,6 +15,7 @@
         .goal-image-wrapper {
           .goal-image {
             top: -10px;
+
           }
 
           .muscle-image {
@@ -28,7 +29,7 @@
       }
 
       &.selected {
-        @include border-radius(4px);
+        @include border-radius(0);
         border: 10px solid rgba(255, 102, 0, 0.7);
       }
 
@@ -36,6 +37,8 @@
         height: 170px;
         position: relative;
         .goal-image {
+          @include transition(ease-in-out 0.2s);
+          top: 0;
           height: 170px;
           margin: 0 auto;
           overflow: hidden;

@@ -62,11 +62,34 @@ block content
                 - if (exercise.type === 'core')
                   option(value=exercise.title) #{exercise.title}
 
+
+
         .form-group
-          .col-sm-offset-3.col-sm-9.btn-create
+          .col-sm-offset-1.col-sm-9.btn-create
+
+            div(onclick="backToSelection()", class="btn btn-default") Previous
+
             button(type="submit", class="btn btn-default") Create Program
 
         input(type="hidden", value="#{selectedGoal}", name="goal")
+
+        script.
+          // Set the localStorage variable to empty on page load
+          (function () {
+            localStorage.setItem("selectionFromNext", "");
+          })();
+
+          /**
+           * Fired when the user clicks 'previous' button.
+           * Sets the localStorage variable to contain the selection that the user had made previously.
+           * Relocates the url to the first phase of creating programs.
+           */
+          function backToSelection() {
+            localStorage.setItem("selectionFromNext", "#{selectedGoal}");
+            window.location.assign("/create");
+          }
+
+
 
 
 

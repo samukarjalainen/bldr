@@ -8,6 +8,12 @@ $navbar-color: #555;
 $navbar-active-color: #333;
 $light-gray: #777;
 
+/* Media queries */
+$mq-phone: "only screen and (max-width: 480px)";
+$mq-tablet: "only screen and (max-width: 768px)";
+$mq-desktop-small: "only screen and (max-width : 992px)";
+$mq-desktop-large: "only screen and (min-width : 1200px)";
+
 /* Placeholders */
 %default-font {
   font-family: 'Ubuntu', sans-serif;

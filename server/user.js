@@ -49,9 +49,10 @@ var userApi = {
         );
 
       } else {
-        
+
         // User wanted to change the password
         var hash = bcrypt.hashSync(newPass, bcrypt.genSaltSync(10));
+
         User.findOneAndUpdate(
           { email: req.user.email },
           { email: req.body.email,

@@ -37,7 +37,12 @@ block content
     var nextBtn = document.getElementById('make-selection-button');
     var errorMsg = document.getElementById('error-message');
 
-    // Anonymous function fired on page load
+    /**
+     * Anonymous function fired on page load to add click event listeners to goal types.
+     * The event handler removes class 'selected' from all goal types and then
+     * adds class 'selected' to a clicked goal type.
+     * Button 'next' is enabled once a selection is made and a string of the selected type is passed
+     */
     (function () {
       var elements = document.getElementsByClassName('goal-type');
       for (var i = 0; i < elements.length; i++) {
@@ -58,14 +63,67 @@ block content
       }
     })();
 
+    /**
+     * Anonymous function fired on page load to check if the user came back from next phase
+     * If the user came back from next phase, set the selection they made as selected
+     * Otherwise, do nothing.
+     */
+    (function() {
+      var referrer = document.referrer.toString();
+
+      // Check if the user came back from next section
+      // If so, set the selection they made
+      // Else, no selection is made
+      if (referrer.indexOf('/create-2') !== -1) {
+
+        // Set up variables
+        var selectionFromNext = localStorage.getItem("selectionFromNext");
+        var selectionClassName = selectionFromNext;
+        var elements = document.getElementsByClassName('goal-type');
+
+        // Validate that selection contains data
+        if (selectionFromNext !== "") {
+
+          // Set the class name right for weight loss
+          if (selectionFromNext === "weight loss") {
+            selectionClassName = "weight-loss";
+          }
+
+          // Go through the elements and add selection to appropriate item
+          for (var i = 0; i < elements.length; i++) {
+            if (elements[i].classList.contains(selectionClassName)) {
+              elements[i].classList.add('selected');
+              enableButton(selectionFromNext);
+            }
+          }
+
+        }
+
+      }
+    })();
+
+    /**
+     * Utility function to ensure a selection having been made.
+     * Sets the parameter string into a variable for the next phase.
+     * Enables the button by removing 'disabled' class.
+     * Removes any errors on the page
+     *
+     * @param selectedGoal String
+     */
     // Utility function to ensure selection having been made
+
     function enableButton(selectedGoal) {
       selection = selectedGoal;
       nextBtn.classList.remove('disabled');
       errorMsg.classList.add('hidden');
     }
 
-    // Check if a selection is made and post request
+    /**
+     * Function fired when the 'next' button is clicked.
+     * Checks if there are errors (user hasn't made a selection)
+     * If so, shows the error.
+     * Else, posts the selection
+     */
     function makeSelection() {
       if (nextBtn.classList.contains('disabled')) {
         errorMsg.classList.remove('hidden');

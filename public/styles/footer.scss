@@ -5,7 +5,6 @@
   @extend %footer-font;
   height: 130px;
   border-top: 1px solid $light-gray;
-  width: 1140px;
   position:absolute;
   bottom:0;
 
@@ -74,4 +73,26 @@
       }
     }
   }
+  @media #{$mq-desktop-large} {
+    //width: 1170px;
+  }
+
+  @media #{$mq-desktop-small} {
+    //width: 940px;
+  }
+
+
+
+  @media #{$mq-phone} {
+
+  }
 }
+
+@media #{$mq-tablet} {
+  #footer .footer-nav .footer-navbar {
+    margin-top: 20px;
+  }
+}
+
+
+
