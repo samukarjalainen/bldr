@@ -1,6 +1,5 @@
 var User = require('./models/user');
 var bcrypt = require('bcryptjs');
-var TAG = "user.js: ";
 
 var userApi = {
 
@@ -42,7 +41,6 @@ var userApi = {
               req.session.reset();
               req.session.user = updatedUser;
               req.app.locals.user = updatedUser;
-              console.log(TAG + " " + updatedUser);
               next();
             }
           }
@@ -70,7 +68,6 @@ var userApi = {
               req.session.reset();
               req.session.user = updatedUser;
               req.app.locals.user = updatedUser;
-              console.log(TAG + " " + updatedUser);
               next();
             }
           }

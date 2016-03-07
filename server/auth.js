@@ -29,6 +29,7 @@ var auth = {
 
   logout : function (req, res) {
     req.session.reset();
+    req.app.locals.user = "";
     res.redirect('/');
   },
 
