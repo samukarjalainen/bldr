@@ -23,3 +23,13 @@
   }
 
 }
+
+@media #{$mq-phone} {
+  .contact-wrapper {
+    .contact-form {
+      form.form-horizontal {
+        padding: 15px 30px;
+      }
+    }
+  }
+}
