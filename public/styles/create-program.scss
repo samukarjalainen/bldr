@@ -102,3 +102,11 @@
   }
 }
 
+@media #{$mq-phone} {
+  .program-table-wrapper {
+    .program-table {
+      width: 100%;
+    }
+  }
+}
+

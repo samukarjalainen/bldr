@@ -49,6 +49,17 @@ form.form-horizontal {
   }
 }
 
+@media #{$mq-phone} {
+  form.form-horizontal {
+    padding: 15px 20px;
+
+    label {
+      text-align: left;
+      float: left;
+    }
+  }
+}
+
 .form-control {
   @include border-radius(0);
 }

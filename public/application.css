@@ -5916,6 +5916,13 @@ form.form-horizontal {
     form.form-horizontal .btn-default:hover {
       opacity: 1; }
 
+@media only screen and (max-width: 480px) {
+  form.form-horizontal {
+    padding: 15px 20px; }
+    form.form-horizontal label {
+      text-align: left;
+      float: left; } }
+
 .form-control {
   -webkit-border-radius: 0;
   -moz-border-radius: 0;
@@ -6464,6 +6471,10 @@ html, body {
       float: right; }
     .program-table-wrapper .program-table table {
       margin: 0 auto 15px; }
+
+@media only screen and (max-width: 480px) {
+  .program-table-wrapper .program-table {
+    width: 100%; } }
 
 /* Specify colors */
 /* Media queries */
