@@ -73,6 +73,7 @@ router.get('/create-3', auth.authenticate, function (req, res) {
 router.post('/login', auth.login);
 router.post('/signup', auth.register);
 router.get('/logout', auth.logout);
+router.post('/contact-send-message');
 
 /* -- Program routes -- */
 router.post('/programs/delete/:id', auth.authenticate, program.deleteProgram);
