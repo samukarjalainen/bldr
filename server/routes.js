@@ -3,6 +3,7 @@ var router = express.Router();
 var auth = require('./auth.js');
 var program = require('./program.js');
 var user = require('./user.js');
+var contact = require('./contact.js');
 
 
 /* -- PAGES -- */
@@ -14,6 +15,7 @@ router.get('/', function(req, res) {
 /* -- Contact page -- */
 router.get('/contact', function (req, res) {
   res.render('contact', { title: 'Contact' });
+  req.app.locals.contactMessage = "";
 });
 
 /* -- Register page -- */
@@ -73,7 +75,9 @@ router.get('/create-3', auth.authenticate, function (req, res) {
 router.post('/login', auth.login);
 router.post('/signup', auth.register);
 router.get('/logout', auth.logout);
-router.post('/contact-send-message');
+router.post('/contact-send-message', contact.sendContactMessage, function (req, res) {
+  res.render('contact', { title: 'Contact' });
+});
 
 /* -- Program routes -- */
 router.post('/programs/delete/:id', auth.authenticate, program.deleteProgram);

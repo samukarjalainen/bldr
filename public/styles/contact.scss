@@ -22,6 +22,11 @@
     }
   }
 
+  .message-area {
+    text-align: center;
+    margin-top: -10px;
+  }
+
 }
 
 @media #{$mq-phone} {

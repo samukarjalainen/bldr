@@ -6528,6 +6528,10 @@ html, body {
     .contact-wrapper .social-media .social-icon:last-of-type {
       margin-right: 0; }
 
+.contact-wrapper .message-area {
+  text-align: center;
+  margin-top: -10px; }
+
 @media only screen and (max-width: 480px) {
   .contact-wrapper .contact-form form.form-horizontal {
     padding: 15px 30px; } }
