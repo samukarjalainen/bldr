@@ -6370,6 +6370,10 @@ html, body {
 .programs-wrapper h4.create-new {
   margin-bottom: 90px; }
 
+@media only screen and (max-width: 480px) {
+  .programs-wrapper .program-tables-wrapper {
+    width: 100%; } }
+
 /* Specify colors */
 /* Media queries */
 /* Placeholders */
