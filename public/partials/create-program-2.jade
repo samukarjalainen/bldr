@@ -8,22 +8,30 @@ block content
       - var exercisesArray;
       script(type='text/javascript').
         exercisesArray = !{JSON.stringify(exercises)};
-        //console.log(exercisesArray);
 
       h3 You chose <span class="special-word">#{selectedGoal}</span>
       if (selectedGoal === 'muscle')
-        p Building muscle is best done with moderate resting periods and semi-long to long sets.
+        p.info-paragraph
+          | Building muscle is best done with moderate resting periods and semi-long to long sets.
+          | Muscle growth requires more calorie intake than what is spent. Moderate to high amounts (1,5-2g / kg)
+          | of protein each day can assist in muscle growth.
       if (selectedGoal === 'strength')
-        p Strength is best trained by short sets with long resting periods between sets.
+        p.info-paragraph
+          | Strength is best trained by short sets with long resting periods between sets.
+          | Intensive strength training is very demanding to one's body so resting a lot and routine maintenance via
+          | stretches, massages etc. can be of great help.
       if (selectedGoal === 'weight loss')
-        p Losing weight is best achieved with long sets and short resting periods.
+        p.info-paragraph
+          | Losing weight is best achieved with long sets and short resting periods. Even though exercising is important
+          | and can greatly assist in weight loss, the <strong>right kind of diet</strong> is the single most important
+          | aspect in losing weight.
 
       h3 Select exercises
 
       form(name="exerciseForm", class="form-horizontal", method="POST", action="/create-2", enctype="application/x-www-form-urlencoded")
 
         .form-group
-          label(for="legs", class="control-label col-sm-3") Legs:
+          label(for="legs", class="control-label col-sm-3") * Legs:
           .col-sm-7
             select(name="legs", id="legs", class="form-control")
               each exercise, e in exercises
@@ -31,7 +39,7 @@ block content
                   option(value=exercise.title) #{exercise.title}
 
         .form-group
-          label(for="back", class="control-label col-sm-3") Back:
+          label(for="back", class="control-label col-sm-3") * Back:
           .col-sm-7
             select(name="back", id=back, class="form-control")
               each exercise, e in exercises
@@ -39,7 +47,7 @@ block content
                   option(value=exercise.title) #{exercise.title}
 
         .form-group
-          label(for="chest", class="control-label col-sm-3") Chest:
+          label(for="chest", class="control-label col-sm-3") * Chest:
           .col-sm-7
             select(name="chest", id=chest, class="form-control")
               each exercise, e in exercises
@@ -47,7 +55,7 @@ block content
                   option(value=exercise.title) #{exercise.title}
 
         .form-group
-          label(for="shoulders", class="control-label col-sm-3") Shoulders:
+          label(for="shoulders", class="control-label col-sm-3") * Shoulders:
           .col-sm-7
             select(name="shoulders", id=shoulders, class="form-control")
               each exercise, e in exercises
@@ -55,21 +63,19 @@ block content
                   option(value=exercise.title) #{exercise.title}
 
         .form-group
-          label(for="core", class="control-label col-sm-3") Core:
+          label(for="core", class="control-label col-sm-3") * Core:
           .col-sm-7
             select(name="core", id=core, class="form-control")
               each exercise, e in exercises
                 - if (exercise.type === 'core')
                   option(value=exercise.title) #{exercise.title}
 
-
-
         .form-group
           .col-sm-offset-1.col-sm-9.btn-create
-
             div(onclick="backToSelection()", class="btn btn-default") Previous
+            button(type="submit", class="btn btn-default pull-right") Create Program
 
-            button(type="submit", class="btn btn-default") Create Program
+        p(class="pull-left") * = required field
 
         input(type="hidden", value="#{selectedGoal}", name="goal")
 

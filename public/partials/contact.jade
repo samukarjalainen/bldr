@@ -8,7 +8,7 @@ block content
       form(name="login", class="form-horizontal", method="POST", action="/contact-send-message", enctype="application/x-www-form-urlencoded")
 
         .form-group
-          label(for="name", class="control-label col-sm-3") Name:
+          label(for="name", class="control-label col-sm-3") * Name:
           .col-sm-9
             input(type="text", id="name", name="name", class="form-control", placeholder="Your name" required)
             if (user)
@@ -17,7 +17,7 @@ block content
                 element.setAttribute('value', '#{user.firstName} #{user.lastName}');
 
         .form-group
-          label(for="email", class="control-label col-sm-3") E-mail:
+          label(for="email", class="control-label col-sm-3") * E-mail:
           .col-sm-9
             input(type="email", id="email", name="email", class="form-control", placeholder="E-mail address" required)
             if (user)
@@ -26,18 +26,20 @@ block content
                 element.setAttribute('value', '#{user.email}');
 
         .form-group
-          label(for="subject", class="control-label col-sm-3") Subject:
+          label(for="subject", class="control-label col-sm-3") * Subject:
           .col-sm-9
             input(type="text", id="subject", name="subject", class="form-control", placeholder="Message subject" required)
 
         .form-group
-          label(for="message", class="control-label col-sm-3") Message:
+          label(for="message", class="control-label col-sm-3") * Message:
           .col-sm-9
             textarea(rows="7", id=message, name="message",  class="form-control", placeholder="Type your message here" required)
 
         .form-group
           .col-sm-offset-3.col-sm-9
             button(type="submit", class="btn btn-default") Send
+
+        | * = required field
 
       .message-area
         if (contactMessage)

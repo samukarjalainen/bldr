@@ -5900,13 +5900,20 @@ a {
   a:visited {
     color: #ff6600; }
 
+.info-wrapper {
+  text-align: center; }
+
+.info-paragraph {
+  max-width: 620px;
+  display: inline-block; }
+
 .bldr-h4 {
   margin: 30px auto 60px;
   text-align: center; }
 
 form.form-horizontal {
   max-width: 620px;
-  padding: 40px 80px;
+  padding: 40px 60px;
   background-color: #f2f2f2;
   margin: 30px auto 60px; }
   form.form-horizontal .btn-default {
@@ -5934,6 +5941,17 @@ form.form-horizontal {
   -moz-border-radius: 0;
   -ms-border-radius: 0;
   border-radius: 0; }
+
+.alert {
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  -ms-border-radius: 0;
+  border-radius: 0;
+  border: none; }
+
+.error-message-area {
+  text-align: center;
+  margin-bottom: 60px; }
 
 .content-wrapper {
   min-height: 100%;

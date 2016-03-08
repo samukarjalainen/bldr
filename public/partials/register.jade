@@ -17,20 +17,26 @@ block content
           input(name="lastname", type="text", id=lastname, class="form-control")
 
       .form-group
-        label(for="email", class="control-label col-sm-3") E-mail:
+        label(for="email", class="control-label col-sm-3") * E-mail:
         .col-sm-9
-          input(name="email", type="email", id=email, class="form-control")
+          input(name="email", type="email", id=email, class="form-control" required)
 
       .form-group
-        label(for="password", class="control-label col-sm-3") Password:
+        label(for="password", class="control-label col-sm-3") * Password:
         .col-sm-9
-          input(name="password", type="password", id=password, class="form-control")
+          input(name="password", type="password", id=password, class="form-control" required)
 
       .form-group
-        label(for="pwconfirm", class="control-label col-sm-3") Confirm PW:
+        label(for="pwconfirm", class="control-label col-sm-3") * Confirm PW:
         .col-sm-9
-          input(name="pwconfirm", type="password", id=pwconfirm, class="form-control")
+          input(name="pwconfirm", type="password", id=pwconfirm, class="form-control" required)
 
       .form-group
         .col-sm-offset-3.col-sm-9
           button(type="submit", class="btn btn-default") Register
+
+      | * = required field
+
+    .error-message-area
+      if (error)
+        span(class="alert alert-danger") #{error}

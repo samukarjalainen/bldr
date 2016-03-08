@@ -34,27 +34,37 @@ var auth = {
   },
 
   register : function (req, res) {
-    var hash = bcrypt.hashSync(req.body.password, bcrypt.genSaltSync(10));
 
-    var user = new User({
-      firstName: req.body.firstname || 'First',
-      lastName: req.body.lastname || 'Last',
-      email: req.body.email || 'email@email.com',
-      password: hash
-    });
+    console.log(req.body);
 
-    user.save(function (err) {
-      if (err) {
-        var err = "Something went wrong";
-        if (err.code === 11000) {
-          error = "That e-mail is already taken, try another one.";
+    // Check that the pw and confirm fields match
+    if (req.body.password === req.body.pwconfirm) {
+      // They matched, create a new user
+      var hash = bcrypt.hashSync(req.body.password, bcrypt.genSaltSync(10));
+
+      var user = new User({
+        firstName: req.body.firstname || 'First',
+        lastName: req.body.lastname || 'Last',
+        email: req.body.email || 'email@email.com',
+        password: hash
+      });
+
+      user.save(function (err) {
+        if (err) {
+          var err = "Something went wrong";
+          if (err.code === 11000) {
+            error = "That e-mail is already taken, try another one.";
+          }
+          res.render('register', { error: error });
+        } else {
+          setSession(req, user);
+          res.redirect('/profile');
         }
-        res.render('register', { error: error });
-      } else {
-        setSession(req, user);
-        res.redirect('/profile');
-      }
-    })
+      })
+    } else {
+      // Pw and confirm didn't match, send error
+      res.render('register', {error: "The password and confirm pw didn't match."});
+    }
   }
 };
 
