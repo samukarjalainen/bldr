@@ -1,4 +1,4 @@
-var sendgrid = require('sendgrid')('bldrmailer', 'salasana12');
+var sendgrid = require('sendgrid')(process.env.MAIL_KEY, process.env.MAIL_PW);
 
 var contact = {
 
