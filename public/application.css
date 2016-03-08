@@ -6232,6 +6232,14 @@ html, body {
 .get-started {
   margin-bottom: 60px; }
 
+@media only screen and (max-width: 480px) {
+  h3 {
+    font-size: 21px; }
+  .punchline-wrapper .punchline-item .pl-bottom-wrapper .pl-number {
+    font-size: 30px; }
+  .punchline-wrapper .punchline-item .pl-bottom-wrapper .pl-text {
+    font-size: 24px; } }
+
 /*!
  * testimonials.scss - styling for client testimonials section
  */
@@ -6420,16 +6428,23 @@ html, body {
   font-weight: bold; }
 
 /* Mixins */
+.programs-wrapper .programs-heading-section {
+  max-width: 720px;
+  margin: 0 auto; }
+
+.programs-wrapper .current-programs {
+  text-align: left;
+  margin-bottom: 30px;
+  display: inline-block; }
+
+.programs-wrapper .btn-default {
+  display: inline-block;
+  float: right;
+  margin-right: 15px; }
+
 .programs-wrapper .program-tables-wrapper {
   width: 720px;
   margin: 0 auto; }
-  .programs-wrapper .program-tables-wrapper .current-programs {
-    margin-bottom: 30px;
-    display: inline-block; }
-  .programs-wrapper .program-tables-wrapper .btn-default {
-    display: inline-block;
-    float: right;
-    margin-right: 15px; }
   .programs-wrapper .program-tables-wrapper .program-wrapper {
     background-color: #f2f2f2;
     padding: 15px;

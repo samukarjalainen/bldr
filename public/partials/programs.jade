@@ -9,9 +9,11 @@ block content
     else
       h3 Programs
 
-      .program-tables-wrapper
-        h4.current-programs You currently have <span class="special-word">#{allprograms.length}</span> programs.
+      .programs-heading-section
+        h4.current-programs You have <span class="special-word">#{allprograms.length}</span> programs.
         a(href="/create").btn.btn-default Create
+      .program-tables-wrapper
+
 
         // Loop through all programs and populate a table for them
         - each program, i in allprograms

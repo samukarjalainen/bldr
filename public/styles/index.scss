@@ -66,3 +66,22 @@
 .get-started {
   margin-bottom: 60px;
 }
+
+@media #{$mq-phone} {
+  h3 {
+    font-size: 21px;
+  }
+  .punchline-wrapper {
+    .punchline-item {
+      .pl-bottom-wrapper {
+        .pl-number {
+          font-size: 30px;
+        }
+
+        .pl-text {
+          font-size: 24px;
+        }
+      }
+    }
+  }
+}

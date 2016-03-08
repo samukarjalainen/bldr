@@ -6,19 +6,25 @@
 @import "variables";
 
 .programs-wrapper {
+  .programs-heading-section {
+    max-width: 720px;
+    margin: 0 auto;
+  }
+
+  .current-programs {
+    text-align: left;
+    margin-bottom: 30px;
+    display: inline-block;
+  }
+  .btn-default {
+    display: inline-block;
+    float: right;
+    margin-right: 15px;
+  }
+
   .program-tables-wrapper {
     width: 720px;
     margin:0 auto;
-
-    .current-programs {
-      margin-bottom: 30px;
-      display: inline-block;
-    }
-    .btn-default {
-      display: inline-block;
-      float: right;
-      margin-right: 15px;
-    }
 
     .program-wrapper {
       background-color: $bg-light;
