@@ -1,9 +1,24 @@
+/**
+ * auth.js - user authentication related functions
+ *
+ * @type {*|exports|module.exports}
+ */
+
 var bcrypt = require('bcryptjs');
 var User = require('./models/user');
 
 
 var auth = {
 
+  /**
+   * Check that the request has user (user is logged in)
+   * If not, redirect to login page
+   * Else, pass on the request
+   *
+   * @param req
+   * @param res
+   * @param next
+     */
   authenticate : function (req, res, next) {
     if (!req.user) {
       res.redirect('/login');
@@ -12,27 +27,50 @@ var auth = {
     }
   },
 
+  /**
+   * Find the user from database with given email address
+   * If user not found, render error
+   * Else, compare given password with the one stored in db and set session in case of success
+   * If passwords don't match, render error
+   *
+   * @param req
+   * @param res
+     */
   login : function (req, res) {
     User.findOne({ email: req.body.email }, function (err, user) {
       if (!user) {
-        res.render('login', { title: 'Bldr | login', error: 'Invalid email or password.' });
+        res.render('login', { title: 'Login', error: 'Invalid email or password.' });
       } else {
         if (bcrypt.compareSync(req.body.password, user.password)) {
           setSession(req, user);
           res.redirect('/profile');
         } else {
-          res.render('login', { title: 'Bldr | login', error: 'Invalid email or password.' });
+          res.render('login', { title: 'Login', error: 'Invalid email or password.' });
         }
       }
     })
   },
 
+  /**
+   * Reset the session and locals user variable and redirect to home page
+   *
+   * @param req
+   * @param res
+     */
   logout : function (req, res) {
     req.session.reset();
     req.app.locals.user = "";
     res.redirect('/');
   },
 
+  /**
+   * Process a registration request
+   * In case of successful processing, save the user into database and set session
+   * Else, render error
+   *
+   * @param req
+   * @param res
+     */
   register : function (req, res) {
 
     console.log(req.body);
@@ -68,6 +106,12 @@ var auth = {
   }
 };
 
+/**
+ * Utility function to set a session for current user.
+ *
+ * @param req
+ * @param user
+ */
 function setSession(req, user) {
   var userWithoutPassword = user;
   delete userWithoutPassword.password;

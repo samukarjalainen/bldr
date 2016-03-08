@@ -13,6 +13,7 @@ block content
         h4.current-programs You currently have <span class="special-word">#{allprograms.length}</span> programs.
         a(href="/create").btn.btn-default Create
 
+        // Loop through all programs and populate a table for them
         - each program, i in allprograms
           .program-wrapper
             h4.program-table-goal #{i+1}. #{program.goal}

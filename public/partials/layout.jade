@@ -6,11 +6,13 @@ html(lang='en')
     .content-wrapper
       .view-wrapper
         .container
+          // Include navbar according to the user's login status
           if (user)
             include navbar
           else
             include navbar-not-logged-in
 
+        // The active page content is shown in this container
         .container
           block content
 

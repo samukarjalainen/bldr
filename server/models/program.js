@@ -1,3 +1,9 @@
+/**
+ * program.js - Defines the program schema
+ *
+ * @type {mongoose|exports|module.exports}
+ */
+
 var mongoose = require('../db');
 
 var Schema = mongoose.Schema;

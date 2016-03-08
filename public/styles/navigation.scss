@@ -1,3 +1,8 @@
+/*!
+ * navigation.scss - navigation styling
+ */
+
+
 @import "variables";
 
 .navbar-default {
@@ -6,8 +11,8 @@
 
   .navbar-nav {
     @extend %navbar-nav-font;
-    & > {
 
+    & > {
       li {
         a {
           &:hover {
@@ -50,6 +55,7 @@
       height: 33px;
       margin: 10px;
     }
+
     .navbar-brand {
       @extend %navbar-brand-font;
     }
@@ -83,7 +89,6 @@
 
     .navbar-nav {
       & > {
-
         li {
           a {
             &:hover {

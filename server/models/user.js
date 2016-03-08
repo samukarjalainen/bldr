@@ -1,3 +1,9 @@
+/**
+ * user.js - Defines the user schema
+ *
+ * @type {mongoose|exports|module.exports}
+ */
+
 var mongoose = require('../db');
 var uniqueValidator = require('mongoose-unique-validator');
 
@@ -10,6 +16,7 @@ var userSchema = new Schema({
   password: String
 });
 
+// Mongoose unique validator is user for validating unique fields
 userSchema.plugin(uniqueValidator);
 
 var User = mongoose.model('User', userSchema);

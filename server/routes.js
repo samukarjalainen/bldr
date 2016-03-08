@@ -1,3 +1,9 @@
+/**
+ * routes.js - set up the routing of the app
+ *
+ * @type {*|exports|module.exports}
+ */
+
 var express = require('express');
 var router = express.Router();
 var auth = require('./auth.js');
@@ -82,7 +88,9 @@ router.post('/contact-send-message', contact.sendContactMessage, function (req, 
 /* -- Program routes -- */
 router.post('/programs/delete/:id', auth.authenticate, program.deleteProgram);
 router.post('/programs/create', auth.authenticate, program.selectGoal);
-router.get('/programs/create-exercises', program.createData);
+router.get('/programs/create-exercises', program.createData, function (req, res) {
+  res.redirect('/');
+});
 
 /* -- User routes -- */
 router.post('/user/update-info', auth.authenticate, user.updateInformation, function (req, res) {

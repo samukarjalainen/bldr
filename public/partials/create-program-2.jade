@@ -9,7 +9,9 @@ block content
       script(type='text/javascript').
         exercisesArray = !{JSON.stringify(exercises)};
 
+      // Display the correct info text according to what the selected goal was
       h3 You chose <span class="special-word">#{selectedGoal}</span>
+
       if (selectedGoal === 'muscle')
         p.info-paragraph
           | Building muscle is best done with moderate resting periods and semi-long to long sets.
@@ -28,8 +30,10 @@ block content
 
       h3 Select exercises
 
+      // Form for selecting exercises
       form(name="exerciseForm", class="form-horizontal", method="POST", action="/create-2", enctype="application/x-www-form-urlencoded")
 
+        // Legs
         .form-group
           label(for="legs", class="control-label col-sm-3") * Legs:
           .col-sm-7
@@ -38,6 +42,7 @@ block content
                 - if (exercise.type === 'legs')
                   option(value=exercise.title) #{exercise.title}
 
+        // Back
         .form-group
           label(for="back", class="control-label col-sm-3") * Back:
           .col-sm-7
@@ -46,6 +51,7 @@ block content
                 - if (exercise.type === 'back')
                   option(value=exercise.title) #{exercise.title}
 
+        // Chest
         .form-group
           label(for="chest", class="control-label col-sm-3") * Chest:
           .col-sm-7
@@ -54,6 +60,7 @@ block content
                 - if (exercise.type === 'chest')
                   option(value=exercise.title) #{exercise.title}
 
+        // Shoulders
         .form-group
           label(for="shoulders", class="control-label col-sm-3") * Shoulders:
           .col-sm-7
@@ -62,6 +69,7 @@ block content
                 - if (exercise.type === 'shoulders')
                   option(value=exercise.title) #{exercise.title}
 
+        // Core
         .form-group
           label(for="core", class="control-label col-sm-3") * Core:
           .col-sm-7
@@ -70,6 +78,7 @@ block content
                 - if (exercise.type === 'core')
                   option(value=exercise.title) #{exercise.title}
 
+        // Submit form
         .form-group
           .col-sm-offset-1.col-sm-9.btn-create
             div(onclick="backToSelection()", class="btn btn-default") Previous
@@ -77,6 +86,7 @@ block content
 
         p(class="pull-left") * = required field
 
+        // Pass the goal with the form in a hidden input
         input(type="hidden", value="#{selectedGoal}", name="goal")
 
         script.

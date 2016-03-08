@@ -1,3 +1,8 @@
+/*!
+ *  create-program.scss - styling for create-program pages
+ */
+
+
 @import "variables";
 
 .create-program-wrapper {
@@ -15,7 +20,6 @@
         .goal-image-wrapper {
           .goal-image {
             top: -10px;
-
           }
 
           .muscle-image {
@@ -74,7 +78,7 @@
 
 
 }
-
+/* Program table secion */
 .program-table-wrapper {
   max-width: 720px;
   margin: 0 auto 90px;
@@ -98,7 +102,6 @@
     table {
       margin:0 auto 15px;
     }
-
   }
 }
 

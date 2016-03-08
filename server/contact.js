@@ -1,7 +1,19 @@
+/**
+ * contact.js - contact page related functions
+ */
+
 var sendgrid = require('sendgrid')(process.env.MAIL_KEY, process.env.MAIL_PW);
 
 var contact = {
 
+  /**
+   * Parses the contact request and sends a reply to the user specified address as well as to the specified admin
+   * in case of success. In case of error, print out error.
+   *
+   * @param req
+   * @param res
+   * @param next
+     */
   sendContactMessage : function (req, res, next) {
 
     console.log(req.body);

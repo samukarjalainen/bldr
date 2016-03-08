@@ -1,3 +1,8 @@
+/*!
+ * testimonials.scss - styling for client testimonials section
+ */
+
+
 @import "variables";
 @import "../bower_components/OwlCarousel/owl-carousel/owl.carousel.css";
 
@@ -42,7 +47,6 @@
 }
 
 /* Owl carousel styles */
-
 .owl-theme {
   .owl-controls {
     margin-top: 10px;
@@ -77,7 +81,6 @@
       -webkit-border-radius: 30px;
       -moz-border-radius: 30px;
       border-radius: 30px;
-      //background: $accent-color;
       filter: Alpha(Opacity=50);/*IE7 fix*/
       opacity: 0.5;
 
@@ -121,7 +124,7 @@
 }
 
 // Fix controls in mobile view
-@media only screen and (max-width : 1200px) {
+@media #{$mq-desktop-small} {
   .owl-theme {
     .owl-controls {
       .owl-buttons {

@@ -1,5 +1,7 @@
+// This navbar is shown when the user has logged in
 block navbar
   nav.navbar.navbar-default(role="navigation")
+
     .navbar-header
       button.navbar-toggle.collapsed(type="button", data-toggle="collapse", data-target="#navbar", aria-expanded="false", aria-controls="navbar")
         span.sr-only Toggle navigation
@@ -10,8 +12,8 @@ block navbar
         img.pull-left.site-logo(src="../images/builderi-logo.svg")
       span.navbar-brand Bldr
 
-
     #navbar.collapse.navbar-collapse
+      // Set class active to display the active page indicator
       ul.nav.navbar-nav.pull-right
         li(class=title == 'Home' ? 'active' : undefined)
           a(href="/") Home

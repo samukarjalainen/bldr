@@ -1,8 +1,21 @@
+/**
+ * user.js - user related functions
+ *
+ * @type {User|exports|module.exports}
+ */
+
 var User = require('./models/user');
 var bcrypt = require('bcryptjs');
 
 var userApi = {
 
+  /**
+   * Handle an update request and and update information according to the request
+   *
+   * @param req
+   * @param res
+   * @param next
+     */
   updateInformation : function (req, res, next) {
 
     // Set up needed variables

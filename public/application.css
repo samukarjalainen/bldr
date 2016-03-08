@@ -1,4 +1,7 @@
 @charset "UTF-8";
+/*!
+ * main.scss - the main style file of the project where every other file is imported
+ */
 /* Import bootstrap styles */
 /*!
  * Bootstrap v3.3.6 (http://getbootstrap.com)
@@ -5831,6 +5834,9 @@ button.close {
     display: none !important; } }
 
 /* Import custom styles */
+/*!
+ *  _variables.scss - contains variables used the project
+ */
 /* Specify colors */
 /* Media queries */
 /* Placeholders */
@@ -5856,6 +5862,12 @@ html, body {
   font-weight: bold; }
 
 /* Mixins */
+/*!
+ *  _base.scss - contains base styles for the project
+ */
+/*!
+ *  _variables.scss - contains variables used the project
+ */
 /* Specify colors */
 /* Media queries */
 /* Placeholders */
@@ -5968,6 +5980,12 @@ form.form-horizontal {
       .content-wrapper .view-wrapper .btn-default:hover {
         opacity: 1; }
 
+/*!
+ * navigation.scss - navigation styling
+ */
+/*!
+ *  _variables.scss - contains variables used the project
+ */
 /* Specify colors */
 /* Media queries */
 /* Placeholders */
@@ -6044,6 +6062,12 @@ html, body {
   .navbar-default .navbar-nav > li.active:after {
     display: none; } }
 
+/*!
+ * footer.scss - footer styling
+ */
+/*!
+ *  _variables.scss - contains variables used the project
+ */
 /* Specify colors */
 /* Media queries */
 /* Placeholders */
@@ -6131,6 +6155,12 @@ html, body {
     text-align: center;
     margin-bottom: 30px; } }
 
+/*!
+ * index.scss - styling for homepage
+ */
+/*!
+ *  _variables.scss - contains variables used the project
+ */
 /* Specify colors */
 /* Media queries */
 /* Placeholders */
@@ -6202,6 +6232,12 @@ html, body {
 .get-started {
   margin-bottom: 60px; }
 
+/*!
+ * testimonials.scss - styling for client testimonials section
+ */
+/*!
+ *  _variables.scss - contains variables used the project
+ */
 /* Specify colors */
 /* Media queries */
 /* Placeholders */
@@ -6340,7 +6376,7 @@ html, body {
   /*IE7 fix*/
   opacity: 1; }
 
-@media only screen and (max-width: 1200px) {
+@media only screen and (max-width: 992px) {
   .owl-theme .owl-controls .owl-buttons .owl-prev {
     left: 0; }
   .owl-theme .owl-controls .owl-buttons .owl-next {
@@ -6353,6 +6389,12 @@ html, body {
     display: block;
     max-width: 370px; } }
 
+/*!
+ *  programs.scss - styling for programs page
+ */
+/*!
+ *  _variables.scss - contains variables used the project
+ */
 /* Specify colors */
 /* Media queries */
 /* Placeholders */
@@ -6409,6 +6451,12 @@ html, body {
   .programs-wrapper .program-tables-wrapper {
     width: 100%; } }
 
+/*!
+ *  create-program.scss - styling for create-program pages
+ */
+/*!
+ *  _variables.scss - contains variables used the project
+ */
 /* Specify colors */
 /* Media queries */
 /* Placeholders */
@@ -6482,6 +6530,7 @@ html, body {
   .create-program-wrapper .exercises-wrapper .btn-create {
     text-align: left; }
 
+/* Program table secion */
 .program-table-wrapper {
   max-width: 720px;
   margin: 0 auto 90px; }
@@ -6504,6 +6553,12 @@ html, body {
   .program-table-wrapper .program-table {
     width: 100%; } }
 
+/*!
+ *  contact.scss - styling for contact page
+ */
+/*!
+ *  _variables.scss - contains variables used the project
+ */
 /* Specify colors */
 /* Media queries */
 /* Placeholders */
@@ -6554,6 +6609,12 @@ html, body {
   .contact-wrapper .contact-form form.form-horizontal {
     padding: 15px 30px; } }
 
+/*!
+ * profile.scss - profile page styling
+ */
+/*!
+ *  _variables.scss - contains variables used the project
+ */
 /* Specify colors */
 /* Media queries */
 /* Placeholders */

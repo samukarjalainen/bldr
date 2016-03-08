@@ -1,3 +1,12 @@
+/**
+ * app.js - the launching point of bldr
+ *
+ * @type {*|exports|module.exports}
+ */
+
+
+
+/* -- VARIABLES -- */
 var express = require('express');
 var path = require('path');
 var fs = require('fs');
@@ -7,11 +16,10 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var sessions = require('client-sessions');
 var User = require('./server/models/user');
-
 var app = express();
 
 
-/* -- Set up the response headers -- */
+/* -- RESPONSE HEADERS -- */
 app.all('/*', function(req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
   res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS');
@@ -24,7 +32,7 @@ app.all('/*', function(req, res, next) {
 });
 
 
-/* -- Middleware -- */
+/* -- MIDDLEWARE -- */
 app.use(favicon(__dirname + '/public/images/favicon.png'));
 app.use(logger('dev'));
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -54,7 +62,7 @@ app.use(function (req, res, next) {
 });
 
 
-/* -- Set up environment variables -- */
+/* -- ENVIRONMENT VARIABLES -- */
 var env = process.env.NODE_ENV || 'development';
 app.locals.ENV = env;
 app.locals.ENV_DEVELOPMENT = env == 'development';
@@ -67,11 +75,11 @@ app.set('view engine', 'jade');
 app.locals.pretty = true;
 
 
-/* -- Set up routing -- */
+/* -- ROUTING -- */
 app.use('/', require('./server/routes'));
 
 
-/* -- Catch 404 and forward to error handler -- */
+/* -- 404 ERROR -- */
 app.use(function(req, res, next) {
     var err = new Error('Not Found');
     err.status = 404;
@@ -79,7 +87,7 @@ app.use(function(req, res, next) {
 });
 
 
-/* -- Error handlers -- */
+/* -- ERROR HANDLERS -- */
 // Development error handler - will print stacktrace
 if (app.get('env') === 'development') {
     app.use(function(err, req, res, next) {
@@ -103,7 +111,7 @@ app.use(function(err, req, res, next) {
 });
 
 
-/* -- Start the server -- */
+/* -- START THE SERVER -- */
 var server = app.listen(app.get('port'), function() {
   console.log('Express server listening on port ' + server.address().port);
 });

@@ -1,7 +1,11 @@
+/*!
+ *  programs.scss - styling for programs page
+ */
+
+
 @import "variables";
 
 .programs-wrapper {
-
   .program-tables-wrapper {
     width: 720px;
     margin:0 auto;
@@ -30,6 +34,7 @@
       .btn-delete {
         float: right;
       }
+
       table {
         margin:0 auto 15px;
       }
@@ -41,6 +46,7 @@
   }
 }
 
+// Phone size
 @media #{$mq-phone} {
   .programs-wrapper {
     .program-tables-wrapper {
