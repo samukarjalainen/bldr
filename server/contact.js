@@ -3,6 +3,7 @@
  */
 
 var sendgrid = require('sendgrid')(process.env.MAIL_KEY, process.env.MAIL_PW);
+var TAG = "contact.js: ";
 
 var contact = {
 
@@ -26,45 +27,51 @@ var contact = {
     var replyMessage = 'Thank you for contacting us. We will get back to you as soon as possible. Below is a copy of the message you sent.\n\n\n';
     var adminMessage = 'New contact request from bldr.\n\n\n';
 
+
     // Make sure that the required fields exist
     if (!(to && subject && message)) {
       req.app.locals.contactMessage = "Couldn't send your message. Please try again.";
+      console.log(TAG + "no to, subject or message");
       next();
     } else {
       console.log("Required fields found, sending mails");
 
-      // Send a reply to the sender
-      sendgrid.send({
-        to:       to,
-        from:     from,
-        subject:  subject,
-        text:     replyMessage + message
-      }, function (err, result) {
-        if (err) {
-          req.app.locals.contactMessage = "Couldn't send your message. Please try again.";
-          res.redirect('/contact');
-        } else {
-          req.app.locals.contactMessage = "Your message has been sent.";
-        }
-      });
 
-      // Send e-mail to the administrator that a message has been sent from the system
+      // Send a reply to the sender
+      // The callback hell is real
       sendgrid.send({
-        to:       admin,
-        from:     from,
-        subject:  subject,
-        text:     adminMessage + message
+        to: to,
+        from: from,
+        subject: subject,
+        text: replyMessage + message
       }, function (err, result) {
         if (err) {
           req.app.locals.contactMessage = "Couldn't send your message. Please try again.";
+          console.log(TAG + "error in sending the mail");
+          console.log(err);
           res.redirect('/contact');
         } else {
           req.app.locals.contactMessage = "Your message has been sent.";
-          res.redirect('/contact');
+          console.log(result);
+          console.log("1st mail sent, sending 2nd");
+          sendgrid.send({
+            to:       admin,
+            from:     from,
+            subject:  subject,
+            text:     adminMessage + message
+          }, function (err, result) {
+            if (err) {
+              req.app.locals.contactMessage = "Couldn't send your message. Please try again.";
+              res.redirect('/contact');
+            } else {
+              req.app.locals.contactMessage = "Your message has been sent.";
+              console.log(result);
+              res.redirect('/contact');
+            }
+          });
         }
       });
     }
-
   }
 
 };

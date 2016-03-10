@@ -66,7 +66,7 @@ app.use(function (req, res, next) {
 var env = process.env.NODE_ENV || 'development';
 app.locals.ENV = env;
 app.locals.ENV_DEVELOPMENT = env == 'development';
-app.set('port', process.env.PORT || 3000);
+app.set('port', process.env.PORT || 4000);
 
 
 /* -- View engine setup -- */

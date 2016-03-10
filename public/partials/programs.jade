@@ -2,13 +2,12 @@ extends layout
 
 block content
   .programs-wrapper
-
+    h3 Programs
     if (hasPrograms === 'false')
-      h4 You don't have any programs yet
-      a(href="/create").btn.btn-default Create
+      .programs-heading-section
+        h4.current-programs You don't have any programs yet
+        a(href="/create").btn.btn-default Create
     else
-      h3 Programs
-
       .programs-heading-section
         h4.current-programs You have <span class="special-word">#{allprograms.length}</span> programs.
         a(href="/create").btn.btn-default Create
