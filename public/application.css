@@ -6154,6 +6154,13 @@ html, body {
     text-align: center;
     margin-bottom: 30px; } }
 
+@media only screen and (max-width: 992px) {
+  #footer .footer-nav .footer-navbar {
+    margin-top: 20px; }
+  #footer .footer-social-media {
+    text-align: center;
+    margin-top: 20px; } }
+
 /*!
  * index.scss - styling for homepage
  */
@@ -6395,6 +6402,27 @@ html, body {
   #clients .client .client-text .client-testimonial {
     display: block;
     max-width: 370px; } }
+
+@media only screen and (max-width: 480px) {
+  #clients .client {
+    width: 100%; }
+    #clients .client .client-image {
+      display: none; }
+    #clients .client .client-text {
+      left: 0; }
+      #clients .client .client-text .client-testimonial {
+        display: block;
+        width: 100%;
+        margin-right: 10px;
+        margin-left: 10px; }
+      #clients .client .client-text .client-name {
+        margin-left: 10px; }
+  .owl-theme .owl-controls .owl-buttons .owl-prev {
+    left: 0;
+    top: -46px; }
+  .owl-theme .owl-controls .owl-buttons .owl-next {
+    right: 0;
+    top: -46px; } }
 
 /*!
  *  programs.scss - styling for programs page

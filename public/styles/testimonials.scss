@@ -123,7 +123,7 @@
   opacity: 1;
 }
 
-// Fix controls in mobile view
+// Media queries
 @media #{$mq-desktop-small} {
   .owl-theme {
     .owl-controls {
@@ -139,7 +139,7 @@
   }
 }
 
-@media only screen and (max-width : 768px) {
+@media #{$mq-tablet} {
   #clients {
     .client {
       .client-image {
@@ -149,6 +149,47 @@
         .client-testimonial {
           display: block;
           max-width: 370px;
+        }
+      }
+    }
+  }
+}
+
+@media #{$mq-phone} {
+  #clients {
+    .client {
+      width: 100%;
+      .client-image {
+        display: none;
+      }
+
+      .client-text {
+        left: 0;
+
+        .client-testimonial {
+          display: block;
+          width: 100%;
+          margin-right: 10px;
+          margin-left: 10px;
+        }
+
+        .client-name {
+          margin-left: 10px;
+        }
+      }
+    }
+  }
+
+  .owl-theme {
+    .owl-controls {
+      .owl-buttons {
+        .owl-prev {
+          left: 0;
+          top: -46px;
+        }
+        .owl-next {
+          right: 0;
+          top: -46px;
         }
       }
     }
